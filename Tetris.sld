@@ -1,1295 +1,1291 @@
 |SLD.data.version|1
 ||K|KEYWORDS|WPMEM,LOGPOINT,ASSERTION
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|4||0|-1|-1|Z|pages.size:16384,pages.count:4,slots.count:4,slots.adr:0,16384,32768,49152
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|8||0|2|32768|F|begin
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|8||0|2|32768|L|,begin,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|9||0|2|32768|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|10||0|2|32769|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|15||0|2|32772|F|Acceptkey
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|15||0|2|32772|L|,Acceptkey,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|16||0|2|32773|F|Key
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|16||0|2|32773|L|,Key,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|17||0|2|32774|F|aux
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|17||0|2|32774|L|,aux,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|19||0|-1|1|D|keyW
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|19||0|-1|1|L|,keyW,,+equ,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|20||0|-1|2|D|keyS
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|20||0|-1|2|L|,keyS,,+equ,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|21||0|-1|3|D|keyD
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|21||0|-1|3|L|,keyD,,+equ,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|22||0|-1|4|D|keyA
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|22||0|-1|4|L|,keyA,,+equ,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|23||0|-1|5|D|keyE
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|23||0|-1|5|L|,keyE,,+equ,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|24||0|-1|6|D|keyQ
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|24||0|-1|6|L|,keyQ,,+equ,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|25||0|-1|7|D|keySp
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|25||0|-1|7|L|,keySp,,+equ
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|28||0|2|32775|F|GameStatusStruct
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|28||0|2|32775|L|,GameStatusStruct,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|30||0|2|32775|F|GameX
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|30||0|2|32775|L|,GameX,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|31||0|2|32776|F|GameY
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|31||0|2|32776|L|,GameY,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|32||0|2|32777|F|TetroPtr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|32||0|2|32777|L|,TetroPtr,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|33||0|2|32779|F|DownCounter
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|33||0|2|32779|L|,DownCounter,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|34:1:10||0|2|32781|F|UndoKey
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|34:1:10||0|2|32781|L|,UndoKey,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|35||0|2|32782|F|NewTetroPtr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|35||0|2|32782|L|,NewTetroPtr,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|38||0|2|32784|F|start
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|38||0|2|32784|L|,start,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|39||0|2|32784|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|40||0|2|32788|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|41||0|2|32790|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|42||0|2|32793|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|43||0|2|32795|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|44||0|2|32797|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|45||0|2|32799|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|46||0|2|32803|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|47||0|2|32806|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|48||0|2|32809|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|50||0|2|32812|F|Tutorialtexts
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|50||0|2|32812|L|,Tutorialtexts,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|51||0|2|32812|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|52||0|2|32816|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|53||0|2|32818|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|54||0|2|32820|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|55||0|2|32822|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|56||0|2|32825|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|57||0|2|32827|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|58||0|2|32829|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|59||0|2|32831|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|60||0|2|32835|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|61||0|2|32838|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|62||0|2|32840|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|63||0|2|32842|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|64||0|2|32844|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|65||0|2|32848|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|66||0|2|32851|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|67||0|2|32854|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|68||0|2|32857|F|restart
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|68||0|2|32857|L|,restart,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|69||0|2|32857|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|70||0|2|32860|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|71||0|2|32863|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|72||0|2|32865|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|73||0|2|32867|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|74||0|2|32869|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|75||0|2|32873|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|76||0|2|32876|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|78||0|2|32879|F|loop
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|78||0|2|32879|L|,loop,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|79||0|2|32879|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|81||0|2|32882|F|gameboard
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|81||0|2|32882|L|,gameboard,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|82||0|2|32882|F|frame
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|82||0|2|32882|L|,frame,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|83||0|2|32882|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|84||0|2|32884|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|85||0|2|32886|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|86||0|2|32888|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|87||0|2|32890|F|looptetrisblueframe
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|87||0|2|32890|L|,looptetrisblueframe,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|88||0|2|32890|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|89||0|2|32892|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|90||0|2|32894|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|91||0|2|32897|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|92||0|2|32899|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|93||0|2|32901|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|94||0|2|32903|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|95||0|2|32905|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|97||0|2|32908|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|98||0|2|32910|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|99||0|2|32912|F|looptetrisblackframe
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|99||0|2|32912|L|,looptetrisblackframe,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|100||0|2|32912|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|101||0|2|32914|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|102||0|2|32916|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|103||0|2|32919|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|104||0|2|32921|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|105||0|2|32923|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|106||0|2|32925|F|title
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|106||0|2|32925|L|,title,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|107||0|2|32925|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|108||0|2|32927|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|109||0|2|32929|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|110||0|2|32932|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|111||0|2|32935|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|113||0|2|32936|F|main
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|113||0|2|32936|L|,main,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|114||0|2|32936|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|115||0|2|32939|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|116||0|2|32941|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|117||0|2|32942|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|119||0|2|32945|F|waitKey
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|119||0|2|32945|L|,waitKey,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|120||0|2|32945|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|121||0|2|32947|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|122||0|2|32949|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|123||0|2|32951|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|124||0|2|32955|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|125||0|2|32958|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|126||0|2|32960|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|127||0|2|32962|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|128||0|2|32964|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|129||0|2|32968|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|130||0|2|32971|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|131||0|2|32974|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|132||0|2|32976|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|133||0|2|32978|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|134||0|2|32980|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|135||0|2|32982|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|136||0|2|32984|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|137||0|2|32986|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|138||0|2|32988|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|139||0|2|32992|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|140||0|2|32995|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|141||0|2|32997|F|endwait
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|141||0|2|32997|L|,endwait,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|142||0|2|32997|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|144||0|2|32998|F|Readkey
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|144||0|2|32998|L|,Readkey,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|145||0|2|32998|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|146||0|2|32999|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|147||0|2|33002|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|148||0|2|33004|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|149||0|2|33006|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|150||0|2|33007|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|151||0|2|33010|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|152||0|2|33012|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|153||0|2|33014|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|154||0|2|33016|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|155||0|2|33018|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|156||0|2|33021|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|157||0|2|33023|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|158||0|2|33025|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|159||0|2|33027|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|160||0|2|33029|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|161||0|2|33032|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|162||0|2|33034|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|163||0|2|33036|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|164||0|2|33038|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|165||0|2|33040|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|166||0|2|33042|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|167||0|2|33045|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|169||0|2|33047|F|endtec
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|169||0|2|33047|L|,endtec,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|170||0|2|33047|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|171||0|2|33048|F|endRead
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|171||0|2|33048|L|,endRead,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|172||0|2|33048|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|173||0|2|33049|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|175||0|2|33052|F|iniRead
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|175||0|2|33052|L|,iniRead,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|176||0|2|33052|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|177||0|2|33055|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|178||0|2|33057|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|179||0|2|33060|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|180||0|2|33062|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|181||0|2|33064|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|182||0|2|33066|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|183||0|2|33069|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|184||0|2|33071|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|185||0|2|33074|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|186||0|2|33076|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|187||0|2|33079|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|188||0|2|33081|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|189||0|2|33083|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|190||0|2|33085|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|191||0|2|33088|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|192||0|2|33090|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|193||0|2|33093|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|194||0|2|33095|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|195||0|2|33098|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|196||0|2|33100|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|197||0|2|33102|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|198||0|2|33104|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|199||0|2|33107|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|201||0|2|33110|F|isSp
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|201||0|2|33110|L|,isSp,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|202||0|2|33110|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|203||0|2|33112|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|204||0|2|33115|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|205||0|2|33117|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|207||0|2|33120|F|isW
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|207||0|2|33120|L|,isW,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|208||0|2|33120|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|209||0|2|33123|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|210||0|2|33125|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|211||0|2|33126|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|212||0|2|33129|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|213||0|2|33130|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|214||0|2|33133|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|215||0|2|33135|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|216||0|2|33138|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|217||0|2|33139|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|219||0|2|33142|F|isD
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|219||0|2|33142|L|,isD,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|220||0|2|33142|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|221||0|2|33145|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|222||0|2|33147|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|223||0|2|33148|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|224||0|2|33151|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|225||0|2|33152|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|226||0|2|33155|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|227||0|2|33157|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|228||0|2|33160|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|229||0|2|33161|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|230||0|2|33164|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|232||0|2|33167|F|isS
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|232||0|2|33167|L|,isS,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|233||0|2|33167|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|234||0|2|33170|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|235||0|2|33172|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|236||0|2|33173|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|237||0|2|33176|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|238||0|2|33177|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|239||0|2|33180|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|240||0|2|33182|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|241||0|2|33185|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|242||0|2|33188|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|243||0|2|33189|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|244||0|2|33192|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|245||0|2|33194|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|246||0|2|33197|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|247||0|2|33198|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|248||0|2|33200|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|249||0|2|33204|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|250||0|2|33207|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|251||0|2|33209|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|252||0|2|33212|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|253||0|2|33214|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|254||0|2|33215|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|256||0|2|33218|F|repS
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|256||0|2|33218|L|,repS,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|257||0|2|33218|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|258||0|2|33220|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|259||0|2|33221|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|261||0|2|33223|F|isA
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|261||0|2|33223|L|,isA,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|262||0|2|33223|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|263||0|2|33226|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|264||0|2|33228|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|265||0|2|33229|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|266||0|2|33232|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|267||0|2|33233|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|268||0|2|33236|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|269||0|2|33238|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|270||0|2|33241|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|271||0|2|33242|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|272||0|2|33245|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|274||0|2|33248|F|isE
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|274||0|2|33248|L|,isE,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|275||0|2|33248|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|276||0|2|33251|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|277||0|2|33253|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|278||0|2|33254|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|279||0|2|33255|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|280||0|2|33257|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|281||0|2|33260|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|282||0|2|33263|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|282||0|2|33264|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|283||0|2|33266|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|284||0|2|33268|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|284||0|2|33271|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|285||0|2|33274|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|286||0|2|33276|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|287||0|2|33277|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|288||0|2|33280|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|289||0|2|33282|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|290||0|2|33285|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|291||0|2|33286|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|293||0|2|33289|F|isQ
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|293||0|2|33289|L|,isQ,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|294||0|2|33289|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|295||0|2|33292|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|296||0|2|33294|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|297||0|2|33295|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|298||0|2|33296|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|299||0|2|33298|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|300||0|2|33301|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|301||0|2|33304|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|301||0|2|33305|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|302||0|2|33307|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|303||0|2|33309|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|303||0|2|33312|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|304||0|2|33315|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|305||0|2|33317|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|306||0|2|33318|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|307||0|2|33321|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|308||0|2|33323|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|309||0|2|33326|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|310||0|2|33327|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|312||0|2|33330|F|saveKey
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|312||0|2|33330|L|,saveKey,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|313||0|2|33330|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|314||0|2|33333|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|315||0|2|33335|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|316||0|2|33338|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|317||0|2|33341|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|319||0|2|33344|F|endTurn
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|319||0|2|33344|L|,endTurn,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|320||0|2|33344|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|321||0|2|33345|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|322||0|2|33348|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|323||0|2|33351|F|firstTetro
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|323||0|2|33351|L|,firstTetro,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|324||0|2|33351|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|325||0|2|33353|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|326||0|2|33357|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|326||0|2|33360|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|327||0|2|33363|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|328||0|2|33365|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|329||0|2|33368|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|330||0|2|33370|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|331||0|2|33372|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|332||0|2|33373|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|333||0|2|33376|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|334||0|2|33378|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|335||0|2|33381|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|336||0|2|33382|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|337||0|2|33385|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|338||0|2|33386|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|339||0|2|33388|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|340||0|2|33391|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|341||0|2|33394|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|342||0|2|33397|F|endgame2
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|342||0|2|33397|L|,endgame2,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|343||0|2|33397|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|344||0|2|33400|F|endgame
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|344||0|2|33400|L|,endgame,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|345||0|2|33400|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|346||0|2|33402|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|347||0|2|33404|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|348||0|2|33408|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|349||0|2|33410|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|350||0|2|33412|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|351||0|2|33414|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|352||0|2|33417|F|pressloop
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|352||0|2|33417|L|,pressloop,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|353||0|2|33417|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|354||0|2|33420|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|355||0|2|33422|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|356||0|2|33424|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|357||0|2|33426|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|358||0|2|33428|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|359||0|2|33431|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|360||0|2|33433|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|361||0|2|33435|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|362||0|2|33437|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|363||0|2|33439|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|364||0|2|33442|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|365||0|2|33444|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|366||0|2|33446|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|367||0|2|33448|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|368||0|2|33450|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|369||0|2|33453|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|370||0|2|33455|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|371||0|2|33457|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|372||0|2|33460|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|373||0|2|33463|F|Random
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|373||0|2|33463|L|,Random,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|374||0|2|33463|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|375||0|2|33464|F|loopRandom
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|375||0|2|33464|L|,loopRandom,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|376||0|2|33464|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|377||0|2|33466|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|378||0|2|33468|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|379||0|2|33470|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|380||0|2|33472|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|381||0|2|33474|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|382||0|2|33476|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|383||0|2|33478|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|384||0|2|33480|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|385||0|2|33482|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|386||0|2|33484|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|387||0|2|33486|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|388||0|2|33488|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|389||0|2|33490|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|390||0|2|33492|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|391||0|2|33494|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|392||0|2|33496|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|393||0|2|33498|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|394||0|2|33500|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|395||0|2|33502|F|is0
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|395||0|2|33502|L|,is0,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|396||0|2|33502|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|397||0|2|33505|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|398||0|2|33507|F|is1
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|398||0|2|33507|L|,is1,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|399||0|2|33507|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|400||0|2|33510|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|401||0|2|33512|F|is2
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|401||0|2|33512|L|,is2,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|402||0|2|33512|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|403||0|2|33515|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|404||0|2|33517|F|is3
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|404||0|2|33517|L|,is3,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|405||0|2|33517|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|406||0|2|33520|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|407||0|2|33522|F|is4
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|407||0|2|33522|L|,is4,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|408||0|2|33522|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|409||0|2|33525|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|410||0|2|33527|F|is5
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|410||0|2|33527|L|,is5,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|411||0|2|33527|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|412||0|2|33530|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|413||0|2|33532|F|is6
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|413||0|2|33532|L|,is6,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|414||0|2|33532|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|415||0|2|33535|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|416||0|2|33537|F|endRandom
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|416||0|2|33537|L|,endRandom,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|417||0|2|33537|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|418||0|2|33539|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|419||0|2|33543|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|419||0|2|33546|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|420||0|2|33549|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|421||0|2|33552|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|422||0|2|33554|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|423||0|2|33556|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|424||0|2|33559|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|425||0|2|33561|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|426||0|2|33562|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|428||0|2|33563|F|NextWindowTetro
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|428||0|2|33563|L|,NextWindowTetro,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|429||0|2|33563|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|430||0|2|33564|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|431||0|2|33565|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|432||0|2|33567|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|433||0|2|33569|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|434||0|2|33571|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|435||0|2|33573|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|436||0|2|33576|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|437||0|2|33577|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|438||0|2|33579|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|439||0|2|33581|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|440||0|2|33584|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|441||0|2|33585|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|442||0|2|33587|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|443||0|2|33589|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|444||0|2|33592|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|445||0|2|33593|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|446||0|2|33595|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|447||0|2|33597|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|448||0|2|33600|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|449||0|2|33601|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|450||0|2|33603|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|451||0|2|33605|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|452||0|2|33606|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|453||0|2|33607|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|455||0|2|33608|F|WindowTuto
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|455||0|2|33608|L|,WindowTuto,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|456||0|2|33608|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|457||0|2|33609|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|458||0|2|33610|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|459||0|2|33612|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|460||0|2|33614|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|461||0|2|33616|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|462||0|2|33618|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|463||0|2|33621|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|464||0|2|33622|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|465||0|2|33624|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|466||0|2|33626|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|467||0|2|33629|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|468||0|2|33630|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|469||0|2|33632|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|470||0|2|33634|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|471||0|2|33637|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|472||0|2|33638|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|473||0|2|33640|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|474||0|2|33642|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|475||0|2|33645|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|476||0|2|33646|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|477||0|2|33648|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|478||0|2|33650|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|479||0|2|33653|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|480||0|2|33654|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|481||0|2|33656|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|482||0|2|33658|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|483||0|2|33661|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|484||0|2|33662|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|485||0|2|33664|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|486||0|2|33666|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|487||0|2|33669|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|488||0|2|33673|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|489||0|2|33675|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|490||0|2|33677|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|491||0|2|33679|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|492||0|2|33682|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|493||0|2|33684|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|494||0|2|33686|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|495||0|2|33688|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|496||0|2|33692|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|497||0|2|33695|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|498||0|2|33697|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|499||0|2|33699|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|500||0|2|33701|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|501||0|2|33705|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|502||0|2|33708|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|503||0|2|33709|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|504||0|2|33710|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|506||0|2|33711|F|Checklines
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|506||0|2|33711|L|,Checklines,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|507||0|2|33711|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|508||0|2|33712|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|509||0|2|33713|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|510||0|2|33714|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|511||0|2|33716|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|512||0|2|33718|F|loopChecklines
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|512||0|2|33718|L|,loopChecklines,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|513||0|2|33718|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|514||0|2|33721|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|515||0|2|33723|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|516||0|2|33726|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|517||0|2|33727|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|518||0|2|33728|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|519||0|2|33730|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|520||0|2|33733|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|521||0|2|33735|F|noline
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|521||0|2|33735|L|,noline,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|522||0|2|33735|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|523||0|2|33737|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|524||0|2|33738|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|525||0|2|33739|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|526||0|2|33741|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|527||0|2|33744|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|528||0|2|33746|F|newline
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|528||0|2|33746|L|,newline,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|529||0|2|33746|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|530||0|2|33747|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|531||0|2|33748|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|532||0|2|33750|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|533||0|2|33753|F|isline
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|533||0|2|33753|L|,isline,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|534||0|2|33753|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|535||0|2|33755|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|536||0|2|33757|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|537||0|2|33759|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|538||0|2|33761|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|539||0|2|33763|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|540||0|2|33766|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|542||0|2|33768|F|moveLines
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|542||0|2|33768|L|,moveLines,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|543||0|2|33768|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|544||0|2|33769|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|545||0|2|33772|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|546||0|2|33773|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|547||0|2|33776|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|548||0|2|33777|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|549||0|2|33778|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|550||0|2|33779|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|551||0|2|33781|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|552||0|2|33784|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|554||0|2|33786|F|endCheckLine
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|554||0|2|33786|L|,endCheckLine,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|555||0|2|33786|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|556||0|2|33787|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|557||0|2|33788|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|558||0|2|33789|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|560||0|2|33790|F|posMem
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|560||0|2|33790|L|,posMem,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|564||0|2|33790|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|565||0|2|33791|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|566||0|2|33792|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|568||0|2|33793|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|569||0|2|33795|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|570||0|2|33796|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|571||0|2|33797|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|572||0|2|33798|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|573||0|2|33799|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|574||0|2|33800|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|576||0|2|33801|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|577||0|2|33803|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|578||0|2|33804|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|580||0|2|33805|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|581||0|2|33808|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|582||0|2|33809|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|583||0|2|33810|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|584||0|2|33811|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|585||0|2|33812|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|588||0|2|33813|F|Undu
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|588||0|2|33813|L|,Undu,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|589||0|2|33813|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|590||0|2|33815|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|591||0|2|33819|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|592||0|2|33822|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|593||0|2|33826|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|594||0|2|33829|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|595||0|2|33833|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|595||0|2|33836|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|596||0|2|33839|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|597||0|2|33841|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|598||0|2|33842|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|599||0|2|33844|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|600||0|2|33846|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|601||0|2|33847|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|602||0|2|33850|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|604||0|2|33853|F|DrawTetromino
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|604||0|2|33853|L|,DrawTetromino,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|605||0|2|33853|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|606||0|2|33854|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|607||0|2|33856|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|608||0|2|33857|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|609||0|2|33858|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|610||0|2|33859|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|611||0|2|33860|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|612||0|2|33861|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|613||0|2|33862|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|614||0|2|33863|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|615||0|2|33864|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|616||0|2|33865|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|617||0|2|33869|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|618||0|2|33872|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|619||0|2|33875|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|620||0|2|33876|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|621||0|2|33877|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|622||0|2|33878|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|624||0|2|33879|F|VectorXData
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|624||0|2|33879|L|,VectorXData,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|625||0|2|33879|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|626||0|2|33880|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|627||0|2|33881|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|628||0|2|33883|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|629||0|2|33886|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|630||0|2|33887|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|631||0|2|33889|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|632||0|2|33892|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|633||0|2|33893|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|634||0|2|33894|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|635||0|2|33895|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|636||0|2|33896|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|638||0|2|33899|F|draw
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|638||0|2|33899|L|,draw,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|639||0|2|33899|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|640||0|2|33900|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|641||0|2|33903|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|642||0|2|33904|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|643||0|2|33905|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|644||0|2|33906|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|646||0|2|33909|F|finfila
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|646||0|2|33909|L|,finfila,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|647||0|2|33909|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|648||0|2|33910|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|649||0|2|33912|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|650||0|2|33915|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|651||0|2|33916|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|652||0|2|33919|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|653||0|2|33920|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|654||0|2|33923|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|655||0|2|33924|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|656||0|2|33925|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|657||0|2|33926|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|659||0|2|33929|F|endtetromino
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|659||0|2|33929|L|,endtetromino,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|660||0|2|33929|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|661||0|2|33930|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|662||0|2|33931|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|663||0|2|33932|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|664||0|2|33933|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|665||0|2|33935|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|666||0|2|33936|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|670||0|2|33937|F|DeleteTetromino
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|670||0|2|33937|L|,DeleteTetromino,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|671||0|2|33937|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|672||0|2|33938|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|673||0|2|33940|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|674||0|2|33941|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|675||0|2|33942|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|676||0|2|33943|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|677||0|2|33944|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|678||0|2|33945|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|679||0|2|33946|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|680||0|2|33947|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|681||0|2|33948|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|682||0|2|33949|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|683||0|2|33953|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|684||0|2|33956|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|685||0|2|33959|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|686||0|2|33960|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|687||0|2|33961|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|688||0|2|33962|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|691||0|2|33963|F|VectorXData2
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|691||0|2|33963|L|,VectorXData2,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|692||0|2|33963|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|693||0|2|33964|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|694||0|2|33965|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|695||0|2|33967|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|696||0|2|33970|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|697||0|2|33971|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|698||0|2|33973|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|699||0|2|33976|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|700||0|2|33977|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|701||0|2|33978|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|702||0|2|33979|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|703||0|2|33980|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|705||0|2|33983|F|draw2
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|705||0|2|33983|L|,draw2,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|706||0|2|33983|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|707||0|2|33984|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|708||0|2|33986|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|709||0|2|33989|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|710||0|2|33990|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|711||0|2|33991|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|712||0|2|33992|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|714||0|2|33995|F|finfila2
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|714||0|2|33995|L|,finfila2,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|715||0|2|33995|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|716||0|2|33996|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|717||0|2|33998|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|718||0|2|34001|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|719||0|2|34002|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|720||0|2|34005|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|721||0|2|34006|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|722||0|2|34009|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|723||0|2|34010|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|724||0|2|34011|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|725||0|2|34012|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|727||0|2|34015|F|endtetromino2
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|727||0|2|34015|L|,endtetromino2,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|728||0|2|34015|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|729||0|2|34016|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|730||0|2|34017|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|731||0|2|34018|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|732||0|2|34019|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|733||0|2|34021|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|734||0|2|34022|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|737||0|2|34023|F|DOTYXC
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|737||0|2|34023|L|,DOTYXC,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|741||0|2|34023|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|742||0|2|34024|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|743||0|2|34025|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|744||0|2|34026|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|746||0|2|34027|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|747||0|2|34029|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|748||0|2|34030|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|749||0|2|34031|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|750||0|2|34032|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|751||0|2|34033|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|752||0|2|34034|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|754||0|2|34035|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|755||0|2|34037|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|756||0|2|34038|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|758||0|2|34039|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|759||0|2|34042|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|762||0|2|34043|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|763||0|2|34044|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|764||0|2|34046|F|colorx3
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|764||0|2|34046|L|,colorx3,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|765||0|2|34046|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|766||0|2|34047|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|767||0|2|34049|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|768||0|2|34050|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|769||0|2|34051|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|770||0|2|34052|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|771||0|2|34053|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|772||0|2|34054|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|773||0|2|34055|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|775||0|2|34056|F|DOTYXCHD
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|775||0|2|34056|L|,DOTYXCHD,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|779||0|2|34056|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|780||0|2|34057|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|781||0|2|34058|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|782||0|2|34059|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|784||0|2|34060|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|785||0|2|34062|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|786||0|2|34063|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|787||0|2|34064|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|788||0|2|34065|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|789||0|2|34066|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|790||0|2|34067|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|792||0|2|34068|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|793||0|2|34070|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|794||0|2|34071|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|796||0|2|34072|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|797||0|2|34075|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|798||0|2|34076|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|799||0|2|34077|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|800||0|2|34078|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|801||0|2|34079|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|802||0|2|34080|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|803||0|2|34081|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|805||0|2|34082|F|savePos
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|805||0|2|34082|L|,savePos,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|806||0|2|34082|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|807||0|2|34084|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|808||0|2|34088|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|809||0|2|34091|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|810||0|2|34095|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|811||0|2|34098|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|812||0|2|34102|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|812||0|2|34105|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|813||0|2|34108|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|814||0|2|34110|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|816||0|2|34111|F|hasCollision
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|816||0|2|34111|L|,hasCollision,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|817||0|2|34111|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|818||0|2|34112|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|819||0|2|34114|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|820||0|2|34115|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|821||0|2|34116|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|822||0|2|34117|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|823||0|2|34118|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|824||0|2|34119|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|825||0|2|34120|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|826||0|2|34121|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|827||0|2|34125|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|828||0|2|34128|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|829||0|2|34131|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|830||0|2|34132|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|831||0|2|34133|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|832||0|2|34134|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|834||0|2|34135|F|VectorXDataColi
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|834||0|2|34135|L|,VectorXDataColi,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|835||0|2|34135|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|836||0|2|34136|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|837||0|2|34138|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|838||0|2|34141|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|839||0|2|34142|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|840||0|2|34144|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|841||0|2|34147|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|842||0|2|34148|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|843||0|2|34149|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|844||0|2|34150|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|846||0|2|34153|F|drawColi
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|846||0|2|34153|L|,drawColi,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|847||0|2|34153|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|848||0|2|34156|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|849||0|2|34158|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|850||0|2|34161|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|851||0|2|34162|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|852||0|2|34163|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|853||0|2|34164|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|855||0|2|34167|F|finfilaColi
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|855||0|2|34167|L|,finfilaColi,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|856||0|2|34167|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|857||0|2|34168|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|858||0|2|34170|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|859||0|2|34173|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|860||0|2|34174|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|861||0|2|34177|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|862||0|2|34178|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|863||0|2|34181|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|864||0|2|34182|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|865||0|2|34183|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|867||0|2|34186|F|endtetrominoColi
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|867||0|2|34186|L|,endtetrominoColi,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|868||0|2|34186|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|869||0|2|34188|F|endColi
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|869||0|2|34188|L|,endColi,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|870||0|2|34188|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|871||0|2|34189|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|872||0|2|34190|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|873||0|2|34192|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|874||0|2|34193|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|876||0|2|34194|F|isBlack
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|876||0|2|34194|L|,isBlack,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|880||0|2|34194|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|881||0|2|34195|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|882||0|2|34196|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|883||0|2|34197|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|885||0|2|34198|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|886||0|2|34200|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|887||0|2|34201|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|888||0|2|34202|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|889||0|2|34203|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|890||0|2|34204|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|891||0|2|34205|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|893||0|2|34206|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|894||0|2|34208|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|895||0|2|34209|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|897||0|2|34210|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|898||0|2|34213|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|899||0|2|34214|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|900||0|2|34215|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|901||0|2|34216|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|902||0|2|34217|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|903||0|2|34218|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|904||0|2|34219|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|906||0|2|34220|F|lineHD
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|906||0|2|34220|L|,lineHD,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|907||0|2|34220|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|908||0|2|34223|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|909||0|2|34224|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|910||0|2|34225|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|911||0|2|34227|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|912||0|2|34230|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|913||0|2|34231|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|914||0|2|34232|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|915||0|2|34233|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|916||0|2|34236|F|endlineHD
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|916||0|2|34236|L|,endlineHD,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|917||0|2|34236|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|918||0|2|34237|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|920||0|2|34238|F|line
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|920||0|2|34238|L|,line,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|921||0|2|34238|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|922||0|2|34241|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|923||0|2|34242|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|924||0|2|34243|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|925||0|2|34245|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|926||0|2|34248|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|927||0|2|34249|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|928||0|2|34250|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|929||0|2|34251|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|930||0|2|34254|F|endline
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|930||0|2|34254|L|,endline,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|931||0|2|34254|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|932||0|2|34255|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|933||0|2|34256|F|endofcode
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|933||0|2|34256|L|,endofcode,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm|933||0|2|34256|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|7||0|-1|7|D|NumBlocks
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|7||0|-1|7|L|,NumBlocks,,+equ
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|8||0|-1|0|D|offsetColor
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|8||0|-1|0|L|,offsetColor,,+equ
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|9||0|-1|1|D|offsetBY
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|9||0|-1|1|L|,offsetBY,,+equ
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|10||0|-1|2|D|offsetBX
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|10||0|-1|2|L|,offsetBX,,+equ
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|11||0|-1|3|D|ptrOffsetRL
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|11||0|-1|3|L|,ptrOffsetRL,,+equ,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|12||0|-1|5|D|ptrOffsetRR
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|12||0|-1|5|L|,ptrOffsetRR,,+equ,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|13||0|-1|7|D|offsetData
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|13||0|-1|7|L|,offsetData,,+equ
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|14||0|-1|4|D|BlockXSize
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|14||0|-1|4|L|,BlockXSize,,+equ
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|15||0|-1|4|D|BlockYSize
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|15||0|-1|4|L|,BlockYSize,,+equ
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|17||0|2|34258|F|TETRISBLOCKS
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|17||0|2|34258|L|,TETRISBLOCKS,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|20||0|-1|6|D|OC
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|20||0|-1|6|L|,OC,,+equ,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|21||0|2|34272|F|OB0
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|21||0|2|34272|L|,OB0,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|22||0|2|34275|F|OB0Ptr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|22||0|2|34275|L|,OB0Ptr,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|23||0|2|34279|F|OB0Data
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|23||0|2|34279|L|,OB0Data,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|28||0|-1|13|D|IC
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|28||0|-1|13|L|,IC,,+equ,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|29||0|2|34283|F|IB0
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|29||0|2|34283|L|,IB0,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|30||0|2|34286|F|IB0Ptr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|30||0|2|34286|L|,IB0Ptr,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|31||0|2|34290|F|IB0Data
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|31||0|2|34290|L|,IB0Data,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|33||0|2|34294|F|IB1
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|33||0|2|34294|L|,IB1,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|34||0|2|34297|F|IB1Ptr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|34||0|2|34297|L|,IB1Ptr,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|35||0|2|34301|F|IB1Data
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|35||0|2|34301|L|,IB1Data,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|42||0|-1|10|D|ZC
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|42||0|-1|10|L|,ZC,,+equ,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|43||0|2|34305|F|ZB0
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|43||0|2|34305|L|,ZB0,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|44||0|2|34308|F|ZB0Ptr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|44||0|2|34308|L|,ZB0Ptr,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|45||0|2|34312|F|ZB0Data
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|45||0|2|34312|L|,ZB0Data,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|48||0|2|34318|F|ZB1
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|48||0|2|34318|L|,ZB1,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|49||0|2|34321|F|ZB1Ptr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|49||0|2|34321|L|,ZB1Ptr,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|50||0|2|34325|F|ZB1Data
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|50||0|2|34325|L|,ZB1Data,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|56||0|-1|4|D|SC
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|56||0|-1|4|L|,SC,,+equ,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|57||0|2|34331|F|SB0
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|57||0|2|34331|L|,SB0,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|58||0|2|34334|F|SB0Ptr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|58||0|2|34334|L|,SB0Ptr,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|59||0|2|34338|F|SB0Data
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|59||0|2|34338|L|,SB0Data,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|62||0|2|34344|F|SB1
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|62||0|2|34344|L|,SB1,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|63||0|2|34347|F|SB1Ptr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|63||0|2|34347|L|,SB1Ptr,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|64||0|2|34351|F|SB1Data
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|64||0|2|34351|L|,SB1Data,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|69||0|-1|2|D|LC
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|69||0|-1|2|L|,LC,,+equ,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|70||0|2|34357|F|LB0
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|70||0|2|34357|L|,LB0,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|71||0|2|34360|F|LB0Ptr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|71||0|2|34360|L|,LB0Ptr,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|72||0|2|34364|F|LB0Data
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|72||0|2|34364|L|,LB0Data,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|75||0|2|34370|F|LB1
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|75||0|2|34370|L|,LB1,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|76||0|2|34373|F|LB1Ptr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|76||0|2|34373|L|,LB1Ptr,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|77||0|2|34377|F|LB1Data
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|77||0|2|34377|L|,LB1Data,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|81||0|2|34383|F|LB2
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|81||0|2|34383|L|,LB2,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|82||0|2|34386|F|LB2Ptr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|82||0|2|34386|L|,LB2Ptr,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|83||0|2|34390|F|LB2Data
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|83||0|2|34390|L|,LB2Data,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|86||0|2|34396|F|LB3
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|86||0|2|34396|L|,LB3,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|87||0|2|34399|F|LB3Ptr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|87||0|2|34399|L|,LB3Ptr,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|88||0|2|34403|F|LB3Data
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|88||0|2|34403|L|,LB3Data,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|93||0|-1|7|D|JC
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|93||0|-1|7|L|,JC,,+equ,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|94||0|2|34409|F|JB0
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|94||0|2|34409|L|,JB0,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|95||0|2|34412|F|JB0Ptr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|95||0|2|34412|L|,JB0Ptr,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|96||0|2|34416|F|JB0Data
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|96||0|2|34416|L|,JB0Data,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|99||0|2|34422|F|JB1
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|99||0|2|34422|L|,JB1,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|100||0|2|34425|F|JB1Ptr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|100||0|2|34425|L|,JB1Ptr,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|101||0|2|34429|F|JB1Data
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|101||0|2|34429|L|,JB1Data,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|105||0|2|34435|F|JB2
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|105||0|2|34435|L|,JB2,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|106||0|2|34438|F|JB2Ptr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|106||0|2|34438|L|,JB2Ptr,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|107||0|2|34442|F|JB2Data
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|107||0|2|34442|L|,JB2Data,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|110||0|2|34448|F|JB3
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|110||0|2|34448|L|,JB3,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|111||0|2|34451|F|JB3Ptr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|111||0|2|34451|L|,JB3Ptr,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|112||0|2|34455|F|JB3Data
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|112||0|2|34455|L|,JB3Data,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|117||0|-1|3|D|TC
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|117||0|-1|3|L|,TC,,+equ,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|118||0|2|34461|F|TB0
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|118||0|2|34461|L|,TB0,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|119||0|2|34464|F|TB0Ptr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|119||0|2|34464|L|,TB0Ptr,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|120||0|2|34468|F|TB0Data
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|120||0|2|34468|L|,TB0Data,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|123||0|2|34474|F|TB1
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|123||0|2|34474|L|,TB1,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|124||0|2|34477|F|TB1Ptr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|124||0|2|34477|L|,TB1Ptr,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|125||0|2|34481|F|TB1Data
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|125||0|2|34481|L|,TB1Data,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|129||0|2|34487|F|TB2
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|129||0|2|34487|L|,TB2,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|130||0|2|34490|F|TB2Ptr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|130||0|2|34490|L|,TB2Ptr,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|131||0|2|34494|F|TB2Data
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|131||0|2|34494|L|,TB2Data,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|134||0|2|34500|F|TB3
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|134||0|2|34500|L|,TB3,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|135||0|2|34503|F|TB3Ptr
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|135||0|2|34503|L|,TB3Ptr,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|136||0|2|34507|F|TB3Data
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm|136||0|2|34507|L|,TB3Data,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|4||0|2|34513|F|hrBKG
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|4||0|2|34513|L|,hrBKG,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|4||0|2|34513|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|5||0|2|34514|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|6||0|2|34515|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|7||0|2|34516|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|8||0|2|34517|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|10||0|2|34519|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|11||0|2|34522|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|12||0|2|34524|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|13||0|2|34527|F|hrLp
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|13||0|2|34527|L|,hrLp,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|13||0|2|34527|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|14||0|2|34531|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|15||0|2|34532|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|16||0|2|34534|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|17||0|2|34535|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|18||0|2|34537|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|19||0|2|34540|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|20||0|2|34541|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|21||0|2|34542|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|22||0|2|34543|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|23||0|2|34544|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|24||0|2|34545|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|26||0|2|34547|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|27||0|2|34549|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|28||0|2|34550|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|29||0|2|34551|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|30||0|2|34552|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|31||0|2|34553|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|33||0|2|34554|F|blockgraph
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm|33||0|2|34554|L|,blockgraph,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|2||0|2|34562|F|printtext
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|2||0|2|34562|L|,printtext,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|5||0|2|34562|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|6||0|2|34564|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|9||0|2|34566|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|13||0|2|34569|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|14||0|2|34571|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|15||0|2|34573|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|16||0|2|34575|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|17||0|2|34578|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|18||0|2|34580|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|20||0|2|34582|F|PrintRow
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|20||0|2|34582|L|,PrintRow,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|20||0|2|34582|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|21||0|2|34583|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|22||0|2|34584|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|23||0|2|34587|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|24||0|2|34588|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|25||0|2|34589|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|26||0|2|34591|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|28||0|2|34592|F|end
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|28||0|2|34592|L|,end,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|28||0|2|34592|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|14||0|2|34594|F|PRINTAT
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|14||0|2|34594|L|,PRINTAT,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|14||0|2|34594|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|20||0|2|34597|F|PRINTSTR
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|20||0|2|34597|L|,PRINTSTR,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|20||0|2|34597|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|21||0|2|34600|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|22||0|2|34601|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|23||0|2|34602|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|24||0|2|34605|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|25||0|2|34607|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|32||0|2|34609|F|PREP_PRT
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|32||0|2|34609|L|,PREP_PRT,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|32||0|2|34609|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|33||0|2|34612|F|PREP_PRT_2
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|33||0|2|34612|L|,PREP_PRT_2,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|33||0|2|34612|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|34||0|2|34615|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|45||0|2|34618|F|CRtoSCREEN
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|45||0|2|34618|L|,CRtoSCREEN,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|46||0|2|34618|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|47||0|2|34619|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|48||0|2|34621|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|49||0|2|34623|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|51||0|2|34624|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|52||0|2|34625|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|53||0|2|34627|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|54||0|2|34628|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|55||0|2|34629|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|56||0|2|34630|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|57||0|2|34631|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|58||0|2|34632|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|59||0|2|34635|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|72||0|2|34636|F|CRtoATTR
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|72||0|2|34636|L|,CRtoATTR,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|73||0|2|34636|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|74||0|2|34637|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|75||0|2|34638|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|76||0|2|34639|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|77||0|2|34640|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|78||0|2|34641|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|79||0|2|34643|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|80||0|2|34645|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|82||0|2|34646|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|83||0|2|34647|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|84||0|2|34649|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|85||0|2|34650|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|87||0|2|34651|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|88||0|2|34654|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|94||0|2|34655|F|PRINTCHNUMAT
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|94||0|2|34655|L|,PRINTCHNUMAT,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|95||0|2|34655|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|96||0|2|34656|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|97||0|2|34657|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|98||0|2|34658|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|99||0|2|34659|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|100||0|2|34662|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|101||0|2|34665|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|102||0|2|34668|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|103||0|2|34669|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|104||0|2|34670|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|105||0|2|34671|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|106||0|2|34672|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|107||0|2|34673|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|112||0|2|34674|F|PRINTCHNUM
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|112||0|2|34674|L|,PRINTCHNUM,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|113||0|2|34674|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|114||0|2|34676|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|115||0|2|34677|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|116||0|2|34678|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|117||0|2|34679|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|118||0|2|34680|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|119||0|2|34683|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|120||0|2|34684|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|128||0|2|34685|F|PRINTCHAR
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|128||0|2|34685|L|,PRINTCHAR,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|129||0|2|34685|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|130||0|2|34687|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|132||0|2|34690|F|BYTEPCHAR
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|132||0|2|34690|L|,BYTEPCHAR,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|132||0|2|34690|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|133||0|2|34691|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|134||0|2|34692|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|135||0|2|34693|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|136||0|2|34694|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|137||0|2|34696|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|138||0|2|34699|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|139||0|2|34702|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|140||0|2|34703|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|141||0|2|34706|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|142||0|2|34707|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|143||0|2|34710|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|144||0|2|34711|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|153||0|2|34712|F|INK2PAPER
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|153||0|2|34712|L|,INK2PAPER,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|153||0|2|34712|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|154||0|2|34715|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|155||0|2|34717|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|156||0|2|34718|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|157||0|2|34719|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|158||0|2|34720|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|159||0|2|34722|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|160||0|2|34725|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|166||0|2|34726|F|CLEARSCR
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|166||0|2|34726|L|,CLEARSCR,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|166||0|2|34726|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|167||0|2|34729|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|168||0|2|34732|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|169||0|2|34735|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|170||0|2|34737|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|171||0|2|34739|T|
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|174:1:14||0|2|34740|F|SCR_CUR_PTR
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|174:1:14||0|2|34740|L|,SCR_CUR_PTR,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|175||0|2|34742|F|SCR_ATTR_PTR
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|175||0|2|34742|L|,SCR_ATTR_PTR,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|176||0|2|34744|F|PRINT_ATTR
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|176||0|2|34744|L|,PRINT_ATTR,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|178||0|2|34745|F|CHARSET
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm|178||0|2|34745|L|,CHARSET,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|34||0|2|35513|F|brick
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|34||0|2|35513|L|,brick,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|35||0|2|35521|F|smiley
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|35||0|2|35521|L|,smiley,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|36||0|2|35529|F|nosmiley
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|36||0|2|35529|L|,nosmiley,
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|49||0|2|35537|F|Endgametext
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|49||0|2|35537|L|,Endgametext,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|50||0|2|35570|F|Welcometext
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|50||0|2|35570|L|,Welcometext,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|51||0|2|35639|F|Tetristext
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|51||0|2|35639|L|,Tetristext,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|52||0|2|35646|F|TutorialText
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|52||0|2|35646|L|,TutorialText,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|53||0|2|35656|F|tutText
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|53||0|2|35656|L|,tutText,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|54||0|2|35772|F|pressText
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|54||0|2|35772|L|,pressText,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|55||0|2|35802|F|pressText2
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|55||0|2|35802|L|,pressText2,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|56||0|2|35832|F|pressText3
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|56||0|2|35832|L|,pressText3,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|57||0|2|35862|F|ingameTutText1
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|57||0|2|35862|L|,ingameTutText1,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|58||0|2|35870|F|ingameTutText2
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|58||0|2|35870|L|,ingameTutText2,,+used
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|59||0|2|35878|F|ingameTutText3
-A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm|59||0|2|35878|L|,ingameTutText3,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|4||0|-1|-1|Z|pages.size:16384,pages.count:4,slots.count:4,slots.adr:0,16384,32768,49152
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|8||0|2|32768|F|begin
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|8||0|2|32768|L|,begin,
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|9||0|2|32768|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|10||0|2|32769|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|15||0|2|32772|F|Acceptkey
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|15||0|2|32772|L|,Acceptkey,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|16||0|2|32773|F|Key
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|16||0|2|32773|L|,Key,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|17||0|2|32774|F|aux
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|17||0|2|32774|L|,aux,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|19||0|-1|1|D|keyW
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|19||0|-1|1|L|,keyW,,+equ,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|20||0|-1|2|D|keyS
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|20||0|-1|2|L|,keyS,,+equ,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|21||0|-1|3|D|keyD
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|21||0|-1|3|L|,keyD,,+equ,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|22||0|-1|4|D|keyA
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|22||0|-1|4|L|,keyA,,+equ,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|23||0|-1|5|D|keyE
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|23||0|-1|5|L|,keyE,,+equ,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|24||0|-1|6|D|keyQ
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|24||0|-1|6|L|,keyQ,,+equ,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|25||0|-1|7|D|keySp
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|25||0|-1|7|L|,keySp,,+equ
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|28||0|2|32775|F|GameStatusStruct
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|28||0|2|32775|L|,GameStatusStruct,
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|30||0|2|32775|F|GameX
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|30||0|2|32775|L|,GameX,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|31||0|2|32776|F|GameY
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|31||0|2|32776|L|,GameY,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|32||0|2|32777|F|TetroPtr
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|32||0|2|32777|L|,TetroPtr,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|33||0|2|32779|F|NewTetroPtr
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|33||0|2|32779|L|,NewTetroPtr,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|36||0|2|32781|F|start
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|36||0|2|32781|L|,start,
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|37||0|2|32781|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|38||0|2|32785|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|39||0|2|32787|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|40||0|2|32790|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|41||0|2|32792|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|42||0|2|32794|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|43||0|2|32796|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|44||0|2|32800|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|45||0|2|32803|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|46||0|2|32806|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|48||0|2|32809|F|Tutorialtexts
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|48||0|2|32809|L|,Tutorialtexts,
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|49||0|2|32809|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|50||0|2|32813|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|51||0|2|32815|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|52||0|2|32817|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|53||0|2|32819|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|54||0|2|32822|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|55||0|2|32824|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|56||0|2|32826|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|57||0|2|32828|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|58||0|2|32832|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|59||0|2|32835|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|60||0|2|32837|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|61||0|2|32839|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|62||0|2|32841|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|63||0|2|32845|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|64||0|2|32848|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|65||0|2|32851|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|66||0|2|32854|F|restart
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|66||0|2|32854|L|,restart,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|67||0|2|32854|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|68||0|2|32857|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|69||0|2|32860|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|70||0|2|32862|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|71||0|2|32864|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|72||0|2|32866|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|73||0|2|32870|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|74||0|2|32873|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|76||0|2|32876|F|loop
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|76||0|2|32876|L|,loop,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|77||0|2|32876|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|79||0|2|32879|F|gameboard
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|79||0|2|32879|L|,gameboard,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|80||0|2|32879|F|frame
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|80||0|2|32879|L|,frame,
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|81||0|2|32879|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|82||0|2|32881|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|83||0|2|32883|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|84||0|2|32885|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|85||0|2|32887|F|looptetrisblueframe
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|85||0|2|32887|L|,looptetrisblueframe,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|86||0|2|32887|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|87||0|2|32889|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|88||0|2|32891|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|89||0|2|32894|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|90||0|2|32896|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|91||0|2|32898|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|92||0|2|32900|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|93||0|2|32902|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|95||0|2|32905|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|96||0|2|32907|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|97||0|2|32909|F|looptetrisblackframe
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|97||0|2|32909|L|,looptetrisblackframe,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|98||0|2|32909|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|99||0|2|32911|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|100||0|2|32913|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|101||0|2|32916|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|102||0|2|32918|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|103||0|2|32920|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|104||0|2|32922|F|title
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|104||0|2|32922|L|,title,
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|105||0|2|32922|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|106||0|2|32924|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|107||0|2|32926|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|108||0|2|32929|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|109||0|2|32932|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|111||0|2|32933|F|main
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|111||0|2|32933|L|,main,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|112||0|2|32933|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|113||0|2|32936|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|114||0|2|32938|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|115||0|2|32939|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|117||0|2|32942|F|waitKey
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|117||0|2|32942|L|,waitKey,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|118||0|2|32942|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|119||0|2|32944|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|120||0|2|32946|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|121||0|2|32948|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|122||0|2|32952|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|123||0|2|32955|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|124||0|2|32957|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|125||0|2|32959|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|126||0|2|32961|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|127||0|2|32965|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|128||0|2|32968|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|129||0|2|32971|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|130||0|2|32973|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|131||0|2|32975|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|132||0|2|32977|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|133||0|2|32979|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|134||0|2|32981|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|135||0|2|32983|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|136||0|2|32985|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|137||0|2|32989|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|138||0|2|32992|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|139||0|2|32994|F|endwait
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|139||0|2|32994|L|,endwait,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|140||0|2|32994|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|144||0|2|32995|F|Readkey
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|144||0|2|32995|L|,Readkey,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|145||0|2|32995|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|146||0|2|32996|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|147||0|2|32999|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|148||0|2|33001|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|149||0|2|33003|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|150||0|2|33004|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|151||0|2|33007|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|152||0|2|33009|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|153||0|2|33011|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|154||0|2|33013|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|155||0|2|33015|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|156||0|2|33018|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|157||0|2|33020|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|158||0|2|33022|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|159||0|2|33024|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|160||0|2|33026|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|161||0|2|33029|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|162||0|2|33031|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|163||0|2|33033|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|164||0|2|33035|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|165||0|2|33037|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|166||0|2|33039|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|167||0|2|33042|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|169||0|2|33044|F|endtec
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|169||0|2|33044|L|,endtec,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|170||0|2|33044|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|171||0|2|33045|F|endRead
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|171||0|2|33045|L|,endRead,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|172||0|2|33045|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|173||0|2|33046|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|175||0|2|33049|F|iniRead
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|175||0|2|33049|L|,iniRead,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|176||0|2|33049|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|177||0|2|33052|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|178||0|2|33054|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|179||0|2|33057|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|180||0|2|33059|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|181||0|2|33061|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|182||0|2|33063|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|183||0|2|33066|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|184||0|2|33068|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|185||0|2|33071|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|186||0|2|33073|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|187||0|2|33076|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|188||0|2|33078|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|189||0|2|33080|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|190||0|2|33082|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|191||0|2|33085|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|192||0|2|33087|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|193||0|2|33090|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|194||0|2|33092|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|195||0|2|33095|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|196||0|2|33097|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|197||0|2|33099|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|198||0|2|33101|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|199||0|2|33104|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|201||0|2|33107|F|isSp
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|201||0|2|33107|L|,isSp,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|202||0|2|33107|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|203||0|2|33109|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|204||0|2|33112|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|205||0|2|33114|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|207||0|2|33117|F|isW
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|207||0|2|33117|L|,isW,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|208||0|2|33117|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|209||0|2|33120|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|210||0|2|33122|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|211||0|2|33123|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|212||0|2|33126|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|213||0|2|33127|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|214||0|2|33130|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|215||0|2|33132|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|216||0|2|33135|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|217||0|2|33136|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|219||0|2|33139|F|isD
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|219||0|2|33139|L|,isD,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|220||0|2|33139|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|221||0|2|33142|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|222||0|2|33144|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|223||0|2|33145|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|224||0|2|33148|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|225||0|2|33149|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|226||0|2|33152|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|227||0|2|33154|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|228||0|2|33157|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|229||0|2|33158|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|230||0|2|33161|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|232||0|2|33164|F|isS
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|232||0|2|33164|L|,isS,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|233||0|2|33164|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|234||0|2|33167|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|235||0|2|33169|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|236||0|2|33170|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|237||0|2|33173|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|238||0|2|33174|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|239||0|2|33177|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|240||0|2|33179|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|241||0|2|33182|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|242||0|2|33185|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|243||0|2|33186|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|244||0|2|33189|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|245||0|2|33191|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|246||0|2|33194|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|247||0|2|33195|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|248||0|2|33197|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|249||0|2|33201|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|250||0|2|33204|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|251||0|2|33206|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|252||0|2|33209|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|253||0|2|33211|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|254||0|2|33212|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|256||0|2|33215|F|repS
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|256||0|2|33215|L|,repS,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|257||0|2|33215|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|258||0|2|33217|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|259||0|2|33218|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|261||0|2|33220|F|isA
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|261||0|2|33220|L|,isA,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|262||0|2|33220|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|263||0|2|33223|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|264||0|2|33225|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|265||0|2|33226|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|266||0|2|33229|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|267||0|2|33230|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|268||0|2|33233|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|269||0|2|33235|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|270||0|2|33238|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|271||0|2|33239|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|272||0|2|33242|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|274||0|2|33245|F|isE
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|274||0|2|33245|L|,isE,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|275||0|2|33245|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|276||0|2|33248|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|277||0|2|33250|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|278||0|2|33251|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|279||0|2|33252|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|280||0|2|33254|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|281||0|2|33257|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|282||0|2|33260|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|282||0|2|33261|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|283||0|2|33263|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|284||0|2|33265|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|284||0|2|33268|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|285||0|2|33271|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|286||0|2|33273|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|287||0|2|33274|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|288||0|2|33277|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|289||0|2|33279|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|290||0|2|33282|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|291||0|2|33283|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|293||0|2|33286|F|isQ
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|293||0|2|33286|L|,isQ,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|294||0|2|33286|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|295||0|2|33289|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|296||0|2|33291|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|297||0|2|33292|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|298||0|2|33293|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|299||0|2|33295|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|300||0|2|33298|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|301||0|2|33301|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|301||0|2|33302|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|302||0|2|33304|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|303||0|2|33306|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|303||0|2|33309|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|304||0|2|33312|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|305||0|2|33314|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|306||0|2|33315|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|307||0|2|33318|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|308||0|2|33320|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|309||0|2|33323|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|310||0|2|33324|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|312||0|2|33327|F|saveKey
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|312||0|2|33327|L|,saveKey,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|313||0|2|33327|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|314||0|2|33330|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|315||0|2|33332|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|316||0|2|33335|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|317||0|2|33338|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|319||0|2|33341|F|endTurn
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|319||0|2|33341|L|,endTurn,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|320||0|2|33341|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|321||0|2|33342|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|322||0|2|33345|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|323||0|2|33348|F|firstTetro
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|323||0|2|33348|L|,firstTetro,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|324||0|2|33348|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|325||0|2|33350|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|326||0|2|33354|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|326||0|2|33357|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|327||0|2|33360|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|328||0|2|33362|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|329||0|2|33365|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|330||0|2|33367|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|331||0|2|33369|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|332||0|2|33370|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|333||0|2|33373|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|334||0|2|33375|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|335||0|2|33378|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|336||0|2|33379|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|337||0|2|33382|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|338||0|2|33383|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|339||0|2|33385|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|340||0|2|33388|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|341||0|2|33391|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|342||0|2|33394|F|endgame2
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|342||0|2|33394|L|,endgame2,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|343||0|2|33394|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|344||0|2|33397|F|endgame
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|344||0|2|33397|L|,endgame,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|345||0|2|33397|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|346||0|2|33399|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|347||0|2|33401|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|348||0|2|33405|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|349||0|2|33407|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|350||0|2|33409|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|351||0|2|33411|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|352||0|2|33414|F|pressloop
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|352||0|2|33414|L|,pressloop,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|353||0|2|33414|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|354||0|2|33417|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|355||0|2|33419|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|356||0|2|33421|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|357||0|2|33423|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|358||0|2|33425|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|359||0|2|33428|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|360||0|2|33430|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|361||0|2|33432|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|362||0|2|33434|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|363||0|2|33436|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|364||0|2|33439|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|365||0|2|33441|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|366||0|2|33443|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|367||0|2|33445|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|368||0|2|33447|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|369||0|2|33450|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|370||0|2|33452|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|371||0|2|33454|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|372||0|2|33457|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|377||0|2|33460|F|Random
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|377||0|2|33460|L|,Random,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|378||0|2|33460|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|379||0|2|33461|F|loopRandom
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|379||0|2|33461|L|,loopRandom,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|380||0|2|33461|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|381||0|2|33463|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|382||0|2|33465|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|383||0|2|33467|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|384||0|2|33469|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|385||0|2|33471|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|386||0|2|33473|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|387||0|2|33475|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|388||0|2|33477|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|389||0|2|33479|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|390||0|2|33481|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|391||0|2|33483|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|392||0|2|33485|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|393||0|2|33487|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|394||0|2|33489|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|395||0|2|33491|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|396||0|2|33493|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|397||0|2|33495|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|398||0|2|33497|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|399||0|2|33499|F|is0
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|399||0|2|33499|L|,is0,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|400||0|2|33499|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|401||0|2|33502|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|402||0|2|33504|F|is1
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|402||0|2|33504|L|,is1,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|403||0|2|33504|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|404||0|2|33507|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|405||0|2|33509|F|is2
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|405||0|2|33509|L|,is2,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|406||0|2|33509|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|407||0|2|33512|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|408||0|2|33514|F|is3
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|408||0|2|33514|L|,is3,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|409||0|2|33514|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|410||0|2|33517|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|411||0|2|33519|F|is4
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|411||0|2|33519|L|,is4,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|412||0|2|33519|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|413||0|2|33522|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|414||0|2|33524|F|is5
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|414||0|2|33524|L|,is5,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|415||0|2|33524|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|416||0|2|33527|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|417||0|2|33529|F|is6
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|417||0|2|33529|L|,is6,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|418||0|2|33529|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|419||0|2|33532|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|420||0|2|33534|F|endRandom
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|420||0|2|33534|L|,endRandom,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|421||0|2|33534|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|422||0|2|33536|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|423||0|2|33540|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|423||0|2|33543|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|424||0|2|33546|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|425||0|2|33549|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|426||0|2|33551|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|427||0|2|33553|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|428||0|2|33556|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|429||0|2|33558|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|430||0|2|33559|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|434||0|2|33560|F|NextWindowTetro
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|434||0|2|33560|L|,NextWindowTetro,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|435||0|2|33560|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|436||0|2|33561|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|437||0|2|33562|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|438||0|2|33564|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|439||0|2|33566|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|440||0|2|33568|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|441||0|2|33570|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|442||0|2|33573|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|443||0|2|33574|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|444||0|2|33576|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|445||0|2|33578|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|446||0|2|33581|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|447||0|2|33582|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|448||0|2|33584|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|449||0|2|33586|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|450||0|2|33589|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|451||0|2|33590|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|452||0|2|33592|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|453||0|2|33594|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|454||0|2|33597|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|455||0|2|33598|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|456||0|2|33600|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|457||0|2|33602|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|458||0|2|33603|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|459||0|2|33604|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|463||0|2|33605|F|WindowTuto
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|463||0|2|33605|L|,WindowTuto,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|464||0|2|33605|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|465||0|2|33606|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|466||0|2|33607|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|467||0|2|33609|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|468||0|2|33611|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|469||0|2|33613|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|470||0|2|33615|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|471||0|2|33618|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|472||0|2|33619|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|473||0|2|33621|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|474||0|2|33623|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|475||0|2|33626|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|476||0|2|33627|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|477||0|2|33629|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|478||0|2|33631|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|479||0|2|33634|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|480||0|2|33635|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|481||0|2|33637|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|482||0|2|33639|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|483||0|2|33642|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|484||0|2|33643|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|485||0|2|33645|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|486||0|2|33647|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|487||0|2|33650|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|488||0|2|33651|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|489||0|2|33653|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|490||0|2|33655|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|491||0|2|33658|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|492||0|2|33659|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|493||0|2|33661|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|494||0|2|33663|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|495||0|2|33666|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|496||0|2|33670|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|497||0|2|33672|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|498||0|2|33674|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|499||0|2|33676|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|500||0|2|33679|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|501||0|2|33681|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|502||0|2|33683|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|503||0|2|33685|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|504||0|2|33689|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|505||0|2|33692|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|506||0|2|33694|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|507||0|2|33696|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|508||0|2|33698|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|509||0|2|33702|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|510||0|2|33705|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|511||0|2|33706|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|512||0|2|33707|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|516||0|2|33708|F|Checklines
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|516||0|2|33708|L|,Checklines,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|517||0|2|33708|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|518||0|2|33709|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|519||0|2|33710|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|520||0|2|33711|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|521||0|2|33713|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|522||0|2|33715|F|loopChecklines
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|522||0|2|33715|L|,loopChecklines,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|523||0|2|33715|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|524||0|2|33718|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|525||0|2|33720|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|526||0|2|33723|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|527||0|2|33724|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|528||0|2|33725|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|529||0|2|33727|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|530||0|2|33730|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|531||0|2|33732|F|noline
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|531||0|2|33732|L|,noline,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|532||0|2|33732|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|533||0|2|33734|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|534||0|2|33735|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|535||0|2|33736|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|536||0|2|33738|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|537||0|2|33741|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|538||0|2|33743|F|newline
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|538||0|2|33743|L|,newline,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|539||0|2|33743|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|540||0|2|33744|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|541||0|2|33745|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|542||0|2|33747|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|543||0|2|33750|F|isline
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|543||0|2|33750|L|,isline,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|544||0|2|33750|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|545||0|2|33752|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|546||0|2|33754|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|547||0|2|33756|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|548||0|2|33758|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|549||0|2|33760|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|550||0|2|33763|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|552||0|2|33765|F|moveLines
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|552||0|2|33765|L|,moveLines,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|553||0|2|33765|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|554||0|2|33766|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|555||0|2|33769|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|556||0|2|33770|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|557||0|2|33773|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|558||0|2|33774|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|559||0|2|33775|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|560||0|2|33776|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|561||0|2|33778|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|562||0|2|33781|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|564||0|2|33783|F|endCheckLine
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|564||0|2|33783|L|,endCheckLine,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|565||0|2|33783|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|566||0|2|33784|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|567||0|2|33785|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|568||0|2|33786|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|572||0|2|33787|F|posMem
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|572||0|2|33787|L|,posMem,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|576||0|2|33787|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|577||0|2|33788|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|578||0|2|33789|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|580||0|2|33790|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|581||0|2|33792|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|582||0|2|33793|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|583||0|2|33794|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|584||0|2|33795|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|585||0|2|33796|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|586||0|2|33797|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|588||0|2|33798|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|589||0|2|33800|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|590||0|2|33801|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|592||0|2|33802|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|593||0|2|33805|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|594||0|2|33806|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|595||0|2|33807|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|596||0|2|33808|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|597||0|2|33809|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|602||0|2|33810|F|Undo
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|602||0|2|33810|L|,Undo,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|603||0|2|33810|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|604||0|2|33812|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|605||0|2|33816|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|606||0|2|33819|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|607||0|2|33823|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|608||0|2|33826|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|609||0|2|33830|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|609||0|2|33833|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|610||0|2|33836|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|611||0|2|33838|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|612||0|2|33839|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|613||0|2|33841|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|614||0|2|33843|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|615||0|2|33844|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|616||0|2|33847|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|620||0|2|33850|F|DrawTetromino
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|620||0|2|33850|L|,DrawTetromino,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|621||0|2|33850|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|622||0|2|33851|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|623||0|2|33853|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|624||0|2|33854|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|625||0|2|33855|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|626||0|2|33856|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|627||0|2|33857|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|628||0|2|33858|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|629||0|2|33859|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|630||0|2|33860|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|631||0|2|33861|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|632||0|2|33862|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|633||0|2|33866|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|634||0|2|33869|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|635||0|2|33872|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|636||0|2|33873|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|637||0|2|33874|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|638||0|2|33875|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|640||0|2|33876|F|VectorXData
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|640||0|2|33876|L|,VectorXData,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|641||0|2|33876|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|642||0|2|33877|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|643||0|2|33878|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|644||0|2|33880|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|645||0|2|33883|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|646||0|2|33884|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|647||0|2|33886|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|648||0|2|33889|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|649||0|2|33890|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|650||0|2|33891|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|651||0|2|33892|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|652||0|2|33893|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|654||0|2|33896|F|draw
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|654||0|2|33896|L|,draw,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|655||0|2|33896|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|656||0|2|33897|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|657||0|2|33900|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|658||0|2|33901|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|659||0|2|33902|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|660||0|2|33903|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|662||0|2|33906|F|finfila
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|662||0|2|33906|L|,finfila,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|663||0|2|33906|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|664||0|2|33907|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|665||0|2|33909|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|666||0|2|33912|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|667||0|2|33913|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|668||0|2|33916|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|669||0|2|33917|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|670||0|2|33920|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|671||0|2|33921|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|672||0|2|33922|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|673||0|2|33923|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|675||0|2|33926|F|endtetromino
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|675||0|2|33926|L|,endtetromino,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|676||0|2|33926|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|677||0|2|33927|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|678||0|2|33928|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|679||0|2|33929|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|680||0|2|33930|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|681||0|2|33932|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|682||0|2|33933|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|688||0|2|33934|F|DeleteTetromino
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|688||0|2|33934|L|,DeleteTetromino,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|689||0|2|33934|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|690||0|2|33935|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|691||0|2|33937|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|692||0|2|33938|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|693||0|2|33939|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|694||0|2|33940|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|695||0|2|33941|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|696||0|2|33942|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|697||0|2|33943|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|698||0|2|33944|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|699||0|2|33945|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|700||0|2|33946|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|701||0|2|33950|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|702||0|2|33953|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|703||0|2|33956|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|704||0|2|33957|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|705||0|2|33958|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|706||0|2|33959|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|709||0|2|33960|F|VectorXData2
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|709||0|2|33960|L|,VectorXData2,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|710||0|2|33960|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|711||0|2|33961|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|712||0|2|33962|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|713||0|2|33964|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|714||0|2|33967|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|715||0|2|33968|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|716||0|2|33970|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|717||0|2|33973|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|718||0|2|33974|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|719||0|2|33975|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|720||0|2|33976|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|721||0|2|33977|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|723||0|2|33980|F|draw2
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|723||0|2|33980|L|,draw2,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|724||0|2|33980|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|725||0|2|33981|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|726||0|2|33983|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|727||0|2|33986|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|728||0|2|33987|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|729||0|2|33988|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|730||0|2|33989|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|732||0|2|33992|F|finfila2
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|732||0|2|33992|L|,finfila2,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|733||0|2|33992|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|734||0|2|33993|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|735||0|2|33995|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|736||0|2|33998|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|737||0|2|33999|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|738||0|2|34002|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|739||0|2|34003|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|740||0|2|34006|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|741||0|2|34007|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|742||0|2|34008|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|743||0|2|34009|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|745||0|2|34012|F|endtetromino2
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|745||0|2|34012|L|,endtetromino2,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|746||0|2|34012|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|747||0|2|34013|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|748||0|2|34014|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|749||0|2|34015|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|750||0|2|34016|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|751||0|2|34018|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|752||0|2|34019|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|757||0|2|34020|F|DOTYXC
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|757||0|2|34020|L|,DOTYXC,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|761||0|2|34020|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|762||0|2|34021|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|763||0|2|34022|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|764||0|2|34023|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|766||0|2|34024|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|767||0|2|34026|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|768||0|2|34027|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|769||0|2|34028|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|770||0|2|34029|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|771||0|2|34030|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|772||0|2|34031|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|774||0|2|34032|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|775||0|2|34034|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|776||0|2|34035|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|778||0|2|34036|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|779||0|2|34039|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|782||0|2|34040|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|783||0|2|34041|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|784||0|2|34043|F|colorx3
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|784||0|2|34043|L|,colorx3,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|785||0|2|34043|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|786||0|2|34044|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|787||0|2|34046|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|788||0|2|34047|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|789||0|2|34048|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|790||0|2|34049|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|791||0|2|34050|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|792||0|2|34051|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|793||0|2|34052|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|797||0|2|34053|F|DOTYXCHD
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|797||0|2|34053|L|,DOTYXCHD,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|801||0|2|34053|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|802||0|2|34054|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|803||0|2|34055|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|804||0|2|34056|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|806||0|2|34057|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|807||0|2|34059|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|808||0|2|34060|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|809||0|2|34061|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|810||0|2|34062|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|811||0|2|34063|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|812||0|2|34064|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|814||0|2|34065|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|815||0|2|34067|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|816||0|2|34068|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|818||0|2|34069|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|819||0|2|34072|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|820||0|2|34073|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|821||0|2|34074|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|822||0|2|34075|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|823||0|2|34076|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|824||0|2|34077|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|825||0|2|34078|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|827||0|2|34079|F|savePos
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|827||0|2|34079|L|,savePos,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|828||0|2|34079|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|829||0|2|34081|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|830||0|2|34085|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|831||0|2|34088|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|832||0|2|34092|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|833||0|2|34095|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|834||0|2|34099|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|834||0|2|34102|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|835||0|2|34105|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|836||0|2|34107|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|840||0|2|34108|F|hasCollision
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|840||0|2|34108|L|,hasCollision,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|841||0|2|34108|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|842||0|2|34109|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|843||0|2|34111|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|844||0|2|34112|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|845||0|2|34113|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|846||0|2|34114|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|847||0|2|34115|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|848||0|2|34116|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|849||0|2|34117|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|850||0|2|34118|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|851||0|2|34122|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|852||0|2|34125|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|853||0|2|34128|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|854||0|2|34129|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|855||0|2|34130|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|856||0|2|34131|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|858||0|2|34132|F|VectorXDataColi
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|858||0|2|34132|L|,VectorXDataColi,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|859||0|2|34132|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|860||0|2|34133|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|861||0|2|34135|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|862||0|2|34138|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|863||0|2|34139|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|864||0|2|34141|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|865||0|2|34144|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|866||0|2|34145|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|867||0|2|34146|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|868||0|2|34147|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|870||0|2|34150|F|drawColi
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|870||0|2|34150|L|,drawColi,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|871||0|2|34150|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|872||0|2|34153|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|873||0|2|34155|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|874||0|2|34158|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|875||0|2|34159|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|876||0|2|34160|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|877||0|2|34161|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|879||0|2|34164|F|finfilaColi
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|879||0|2|34164|L|,finfilaColi,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|880||0|2|34164|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|881||0|2|34165|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|882||0|2|34167|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|883||0|2|34170|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|884||0|2|34171|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|885||0|2|34174|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|886||0|2|34175|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|887||0|2|34178|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|888||0|2|34179|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|889||0|2|34180|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|891||0|2|34183|F|endtetrominoColi
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|891||0|2|34183|L|,endtetrominoColi,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|892||0|2|34183|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|893||0|2|34185|F|endColi
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|893||0|2|34185|L|,endColi,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|894||0|2|34185|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|895||0|2|34186|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|896||0|2|34187|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|897||0|2|34189|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|898||0|2|34190|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|900||0|2|34191|F|isBlack
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|900||0|2|34191|L|,isBlack,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|904||0|2|34191|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|905||0|2|34192|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|906||0|2|34193|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|907||0|2|34194|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|909||0|2|34195|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|910||0|2|34197|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|911||0|2|34198|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|912||0|2|34199|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|913||0|2|34200|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|914||0|2|34201|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|915||0|2|34202|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|917||0|2|34203|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|918||0|2|34205|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|919||0|2|34206|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|921||0|2|34207|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|922||0|2|34210|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|923||0|2|34211|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|924||0|2|34212|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|925||0|2|34213|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|926||0|2|34214|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|927||0|2|34215|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|928||0|2|34216|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|930||0|2|34217|F|lineHD
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|930||0|2|34217|L|,lineHD,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|931||0|2|34217|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|932||0|2|34220|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|933||0|2|34221|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|934||0|2|34222|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|935||0|2|34224|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|936||0|2|34227|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|937||0|2|34228|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|938||0|2|34229|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|939||0|2|34230|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|940||0|2|34233|F|endlineHD
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|940||0|2|34233|L|,endlineHD,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|941||0|2|34233|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|942||0|2|34234|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|944||0|2|34235|F|line
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|944||0|2|34235|L|,line,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|945||0|2|34235|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|946||0|2|34238|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|947||0|2|34239|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|948||0|2|34240|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|949||0|2|34242|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|950||0|2|34245|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|951||0|2|34246|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|952||0|2|34247|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|953||0|2|34248|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|954||0|2|34251|F|endline
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|954||0|2|34251|L|,endline,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|955||0|2|34251|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|956||0|2|34252|T|
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|957||0|2|34253|F|endofcode
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|957||0|2|34253|L|,endofcode,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\Tetris.asm|957||0|2|34253|T|
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|7||0|-1|7|D|NumBlocks
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|7||0|-1|7|L|,NumBlocks,,+equ
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|8||0|-1|0|D|offsetColor
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|8||0|-1|0|L|,offsetColor,,+equ
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|9||0|-1|1|D|offsetBY
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|9||0|-1|1|L|,offsetBY,,+equ
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|10||0|-1|2|D|offsetBX
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|10||0|-1|2|L|,offsetBX,,+equ
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|11||0|-1|3|D|ptrOffsetRL
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|11||0|-1|3|L|,ptrOffsetRL,,+equ,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|12||0|-1|5|D|ptrOffsetRR
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|12||0|-1|5|L|,ptrOffsetRR,,+equ,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|13||0|-1|7|D|offsetData
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|13||0|-1|7|L|,offsetData,,+equ
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|14||0|-1|4|D|BlockXSize
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|14||0|-1|4|L|,BlockXSize,,+equ
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|15||0|-1|4|D|BlockYSize
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|15||0|-1|4|L|,BlockYSize,,+equ
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|17||0|2|34255|F|TETRISBLOCKS
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|17||0|2|34255|L|,TETRISBLOCKS,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|20||0|-1|6|D|OC
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|20||0|-1|6|L|,OC,,+equ,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|21||0|2|34269|F|OB0
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|21||0|2|34269|L|,OB0,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|22||0|2|34272|F|OB0Ptr
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|22||0|2|34272|L|,OB0Ptr,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|23||0|2|34276|F|OB0Data
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|23||0|2|34276|L|,OB0Data,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|28||0|-1|13|D|IC
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|28||0|-1|13|L|,IC,,+equ,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|29||0|2|34280|F|IB0
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|29||0|2|34280|L|,IB0,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|30||0|2|34283|F|IB0Ptr
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|30||0|2|34283|L|,IB0Ptr,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|31||0|2|34287|F|IB0Data
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|31||0|2|34287|L|,IB0Data,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|33||0|2|34291|F|IB1
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|33||0|2|34291|L|,IB1,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|34||0|2|34294|F|IB1Ptr
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|34||0|2|34294|L|,IB1Ptr,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|35||0|2|34298|F|IB1Data
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|35||0|2|34298|L|,IB1Data,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|42||0|-1|10|D|ZC
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|42||0|-1|10|L|,ZC,,+equ,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|43||0|2|34302|F|ZB0
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|43||0|2|34302|L|,ZB0,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|44||0|2|34305|F|ZB0Ptr
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|44||0|2|34305|L|,ZB0Ptr,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|45||0|2|34309|F|ZB0Data
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|45||0|2|34309|L|,ZB0Data,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|48||0|2|34315|F|ZB1
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|48||0|2|34315|L|,ZB1,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|49||0|2|34318|F|ZB1Ptr
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|49||0|2|34318|L|,ZB1Ptr,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|50||0|2|34322|F|ZB1Data
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|50||0|2|34322|L|,ZB1Data,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|56||0|-1|4|D|SC
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|56||0|-1|4|L|,SC,,+equ,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|57||0|2|34328|F|SB0
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|57||0|2|34328|L|,SB0,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|58||0|2|34331|F|SB0Ptr
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|58||0|2|34331|L|,SB0Ptr,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|59||0|2|34335|F|SB0Data
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|59||0|2|34335|L|,SB0Data,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|62||0|2|34341|F|SB1
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|62||0|2|34341|L|,SB1,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|63||0|2|34344|F|SB1Ptr
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|63||0|2|34344|L|,SB1Ptr,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|64||0|2|34348|F|SB1Data
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|64||0|2|34348|L|,SB1Data,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|69||0|-1|2|D|LC
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|69||0|-1|2|L|,LC,,+equ,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|70||0|2|34354|F|LB0
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|70||0|2|34354|L|,LB0,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|71||0|2|34357|F|LB0Ptr
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|71||0|2|34357|L|,LB0Ptr,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|72||0|2|34361|F|LB0Data
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|72||0|2|34361|L|,LB0Data,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|75||0|2|34367|F|LB1
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|75||0|2|34367|L|,LB1,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|76||0|2|34370|F|LB1Ptr
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|76||0|2|34370|L|,LB1Ptr,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|77||0|2|34374|F|LB1Data
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|77||0|2|34374|L|,LB1Data,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|81||0|2|34380|F|LB2
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|81||0|2|34380|L|,LB2,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|82||0|2|34383|F|LB2Ptr
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|82||0|2|34383|L|,LB2Ptr,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|83||0|2|34387|F|LB2Data
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|83||0|2|34387|L|,LB2Data,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|86||0|2|34393|F|LB3
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|86||0|2|34393|L|,LB3,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|87||0|2|34396|F|LB3Ptr
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|87||0|2|34396|L|,LB3Ptr,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|88||0|2|34400|F|LB3Data
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|88||0|2|34400|L|,LB3Data,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|93||0|-1|7|D|JC
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|93||0|-1|7|L|,JC,,+equ,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|94||0|2|34406|F|JB0
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|94||0|2|34406|L|,JB0,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|95||0|2|34409|F|JB0Ptr
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|95||0|2|34409|L|,JB0Ptr,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|96||0|2|34413|F|JB0Data
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|96||0|2|34413|L|,JB0Data,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|99||0|2|34419|F|JB1
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|99||0|2|34419|L|,JB1,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|100||0|2|34422|F|JB1Ptr
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|100||0|2|34422|L|,JB1Ptr,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|101||0|2|34426|F|JB1Data
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|101||0|2|34426|L|,JB1Data,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|105||0|2|34432|F|JB2
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|105||0|2|34432|L|,JB2,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|106||0|2|34435|F|JB2Ptr
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|106||0|2|34435|L|,JB2Ptr,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|107||0|2|34439|F|JB2Data
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|107||0|2|34439|L|,JB2Data,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|110||0|2|34445|F|JB3
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|110||0|2|34445|L|,JB3,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|111||0|2|34448|F|JB3Ptr
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|111||0|2|34448|L|,JB3Ptr,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|112||0|2|34452|F|JB3Data
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|112||0|2|34452|L|,JB3Data,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|117||0|-1|3|D|TC
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|117||0|-1|3|L|,TC,,+equ,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|118||0|2|34458|F|TB0
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|118||0|2|34458|L|,TB0,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|119||0|2|34461|F|TB0Ptr
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|119||0|2|34461|L|,TB0Ptr,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|120||0|2|34465|F|TB0Data
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|120||0|2|34465|L|,TB0Data,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|123||0|2|34471|F|TB1
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|123||0|2|34471|L|,TB1,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|124||0|2|34474|F|TB1Ptr
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|124||0|2|34474|L|,TB1Ptr,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|125||0|2|34478|F|TB1Data
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|125||0|2|34478|L|,TB1Data,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|129||0|2|34484|F|TB2
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|129||0|2|34484|L|,TB2,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|130||0|2|34487|F|TB2Ptr
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|130||0|2|34487|L|,TB2Ptr,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|131||0|2|34491|F|TB2Data
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|131||0|2|34491|L|,TB2Data,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|134||0|2|34497|F|TB3
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|134||0|2|34497|L|,TB3,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|135||0|2|34500|F|TB3Ptr
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|135||0|2|34500|L|,TB3Ptr,
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|136||0|2|34504|F|TB3Data
+A:\Todo\Git\Tetris\Tetris-Z80\tetromino_blocks.asm|136||0|2|34504|L|,TB3Data,
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|4||0|2|34510|F|hrBKG
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|4||0|2|34510|L|,hrBKG,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|4||0|2|34510|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|5||0|2|34511|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|6||0|2|34512|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|7||0|2|34513|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|8||0|2|34514|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|10||0|2|34516|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|11||0|2|34519|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|12||0|2|34521|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|13||0|2|34524|F|hrLp
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|13||0|2|34524|L|,hrLp,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|13||0|2|34524|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|14||0|2|34528|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|15||0|2|34529|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|16||0|2|34531|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|17||0|2|34532|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|18||0|2|34534|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|19||0|2|34537|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|20||0|2|34538|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|21||0|2|34539|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|22||0|2|34540|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|23||0|2|34541|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|24||0|2|34542|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|26||0|2|34544|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|27||0|2|34546|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|28||0|2|34547|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|29||0|2|34548|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|30||0|2|34549|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|31||0|2|34550|T|
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|33||0|2|34551|F|blockgraph
+A:\Todo\Git\Tetris\Tetris-Z80\highResBackground.asm|33||0|2|34551|L|,blockgraph,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|2||0|2|34559|F|printtext
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|2||0|2|34559|L|,printtext,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|5||0|2|34559|T|
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|6||0|2|34561|T|
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|9||0|2|34563|T|
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|13||0|2|34566|T|
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|14||0|2|34568|T|
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|15||0|2|34570|T|
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|16||0|2|34572|T|
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|17||0|2|34575|T|
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|18||0|2|34577|T|
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|20||0|2|34579|F|PrintRow
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|20||0|2|34579|L|,PrintRow,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|20||0|2|34579|T|
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|21||0|2|34580|T|
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|22||0|2|34581|T|
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|23||0|2|34584|T|
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|24||0|2|34585|T|
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|25||0|2|34586|T|
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|26||0|2|34588|T|
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|28||0|2|34589|F|end
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|28||0|2|34589|L|,end,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|28||0|2|34589|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|14||0|2|34591|F|PRINTAT
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|14||0|2|34591|L|,PRINTAT,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|14||0|2|34591|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|20||0|2|34594|F|PRINTSTR
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|20||0|2|34594|L|,PRINTSTR,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|20||0|2|34594|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|21||0|2|34597|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|22||0|2|34598|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|23||0|2|34599|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|24||0|2|34602|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|25||0|2|34604|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|32||0|2|34606|F|PREP_PRT
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|32||0|2|34606|L|,PREP_PRT,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|32||0|2|34606|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|33||0|2|34609|F|PREP_PRT_2
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|33||0|2|34609|L|,PREP_PRT_2,
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|33||0|2|34609|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|34||0|2|34612|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|45||0|2|34615|F|CRtoSCREEN
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|45||0|2|34615|L|,CRtoSCREEN,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|46||0|2|34615|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|47||0|2|34616|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|48||0|2|34618|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|49||0|2|34620|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|51||0|2|34621|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|52||0|2|34622|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|53||0|2|34624|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|54||0|2|34625|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|55||0|2|34626|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|56||0|2|34627|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|57||0|2|34628|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|58||0|2|34629|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|59||0|2|34632|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|72||0|2|34633|F|CRtoATTR
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|72||0|2|34633|L|,CRtoATTR,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|73||0|2|34633|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|74||0|2|34634|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|75||0|2|34635|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|76||0|2|34636|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|77||0|2|34637|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|78||0|2|34638|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|79||0|2|34640|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|80||0|2|34642|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|82||0|2|34643|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|83||0|2|34644|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|84||0|2|34646|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|85||0|2|34647|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|87||0|2|34648|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|88||0|2|34651|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|94||0|2|34652|F|PRINTCHNUMAT
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|94||0|2|34652|L|,PRINTCHNUMAT,
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|95||0|2|34652|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|96||0|2|34653|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|97||0|2|34654|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|98||0|2|34655|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|99||0|2|34656|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|100||0|2|34659|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|101||0|2|34662|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|102||0|2|34665|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|103||0|2|34666|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|104||0|2|34667|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|105||0|2|34668|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|106||0|2|34669|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|107||0|2|34670|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|112||0|2|34671|F|PRINTCHNUM
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|112||0|2|34671|L|,PRINTCHNUM,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|113||0|2|34671|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|114||0|2|34673|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|115||0|2|34674|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|116||0|2|34675|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|117||0|2|34676|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|118||0|2|34677|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|119||0|2|34680|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|120||0|2|34681|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|128||0|2|34682|F|PRINTCHAR
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|128||0|2|34682|L|,PRINTCHAR,
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|129||0|2|34682|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|130||0|2|34684|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|132||0|2|34687|F|BYTEPCHAR
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|132||0|2|34687|L|,BYTEPCHAR,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|132||0|2|34687|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|133||0|2|34688|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|134||0|2|34689|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|135||0|2|34690|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|136||0|2|34691|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|137||0|2|34693|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|138||0|2|34696|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|139||0|2|34699|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|140||0|2|34700|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|141||0|2|34703|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|142||0|2|34704|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|143||0|2|34707|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|144||0|2|34708|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|153||0|2|34709|F|INK2PAPER
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|153||0|2|34709|L|,INK2PAPER,
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|153||0|2|34709|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|154||0|2|34712|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|155||0|2|34714|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|156||0|2|34715|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|157||0|2|34716|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|158||0|2|34717|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|159||0|2|34719|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|160||0|2|34722|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|166||0|2|34723|F|CLEARSCR
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|166||0|2|34723|L|,CLEARSCR,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|166||0|2|34723|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|167||0|2|34726|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|168||0|2|34729|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|169||0|2|34732|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|170||0|2|34734|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|171||0|2|34736|T|
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|174:1:14||0|2|34737|F|SCR_CUR_PTR
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|174:1:14||0|2|34737|L|,SCR_CUR_PTR,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|175||0|2|34739|F|SCR_ATTR_PTR
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|175||0|2|34739|L|,SCR_ATTR_PTR,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|176||0|2|34741|F|PRINT_ATTR
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|176||0|2|34741|L|,PRINT_ATTR,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|178||0|2|34742|F|CHARSET
+A:\Todo\Git\Tetris\Tetris-Z80\text.asm|178||0|2|34742|L|,CHARSET,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|34||0|2|35510|F|brick
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|34||0|2|35510|L|,brick,
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|35||0|2|35518|F|smiley
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|35||0|2|35518|L|,smiley,
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|36||0|2|35526|F|nosmiley
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|36||0|2|35526|L|,nosmiley,
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|49||0|2|35534|F|Endgametext
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|49||0|2|35534|L|,Endgametext,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|50||0|2|35567|F|Welcometext
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|50||0|2|35567|L|,Welcometext,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|51||0|2|35636|F|Tetristext
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|51||0|2|35636|L|,Tetristext,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|52||0|2|35643|F|TutorialText
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|52||0|2|35643|L|,TutorialText,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|53||0|2|35653|F|tutText
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|53||0|2|35653|L|,tutText,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|54||0|2|35769|F|pressText
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|54||0|2|35769|L|,pressText,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|55||0|2|35799|F|pressText2
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|55||0|2|35799|L|,pressText2,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|56||0|2|35829|F|pressText3
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|56||0|2|35829|L|,pressText3,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|57||0|2|35859|F|ingameTutText1
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|57||0|2|35859|L|,ingameTutText1,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|58||0|2|35867|F|ingameTutText2
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|58||0|2|35867|L|,ingameTutText2,,+used
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|59||0|2|35875|F|ingameTutText3
+A:\Todo\Git\Tetris\Tetris-Z80\TextDemo.asm|59||0|2|35875|L|,ingameTutText3,,+used

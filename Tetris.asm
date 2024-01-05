@@ -30,8 +30,6 @@ GameStatusStruct:
 GameX: db 0 ; X position of current tetromino
 GameY: db 0 ; Y position of current tetromino
 TetroPtr: dw 0 ; Pointer to current tetromino
-DownCounter: dw 0 ; Counter for tetromino going Down
-UndoKey : db 0 ; Code of opposite key for undo
 NewTetroPtr: dw 0 ; Pointer to current tetromino
 
 
@@ -119,7 +117,7 @@ main:
 waitKey:                ;loop that ends when a key is pressed
     ld b, 16
     ld c, 2
-    ld a, %0000101
+    ld a, %0000101      ; color cyan
     ld ix, pressText3   ;prints the presstext 3 times to create the animation of the 3 dots
     call PRINTAT
     ld b, 16
@@ -140,7 +138,9 @@ waitKey:                ;loop that ends when a key is pressed
     jr waitKey
 endwait:
     ret
-
+;------------------------------------------------------------------------------------
+;                                       KEYBOARD
+;------------------------------------------------------------------------------------
 Readkey:
     push af
     ld a, (Acceptkey)      ; Load the value of Acceptkey into register a
@@ -151,7 +151,7 @@ Readkey:
     in a, (c) 
     and $1F
     cp $1F
-    jr nz, endtec
+    jr nz, endtec          
     ld bc, $FDFE ; ASD
     in a, (c) 
     and $1F
@@ -172,7 +172,7 @@ endRead:
     pop af
     jp loop
 
-iniRead:                ;diferenciates the key pressed
+iniRead:                ;identify the key pressed
     call savePos
     ld a, 0                ; Load value zero into register a
     ld (Key), A            ; Store that zero in the variable Key
@@ -180,8 +180,8 @@ iniRead:                ;diferenciates the key pressed
     in a, ($FE)            ; input the key fromn that port
     bit 1, A               ; with 'bit' we check that is the key w
     jp z, isW              ; if it returns a 0, it jumps to isW 
-    bit 0, a
-    jp z, isQ
+    bit 0, a               
+    jp z, isQ              ; checks the bit 
     bit 2, a
     jp z, isE
     ld a, $FD
@@ -205,14 +205,14 @@ isSp:
     jp isS               ;like pressing S makes the tetromino go down
 
 isW:
-    call savePos
+    call savePos        ; the position is saved
     ld a, keyW          ; Load variable keyW in register a
     push af
     call DeleteTetromino    ;first deletes the tetromino to make sure doesnt collides with himself
     dec b
     call hasCollision       ; detects if collides with something, register A has the color of the colision, if is 0 then theres no colision
     cp 0
-    jp nz, Undu         ; if colides goes to undu to restore the position
+    jp nz, Undo         ; if colides goes to undo to restore the position
     pop af
     jp saveKey          ; jumps to saveKey to save that key
 
@@ -224,7 +224,7 @@ isD:
     inc c
     call hasCollision
     cp 0
-    jp nz, Undu
+    jp nz, Undo
     pop af
     jp isS
     jp saveKey
@@ -266,7 +266,7 @@ isA:
     dec c
     call hasCollision
     cp 0
-    jp nz, Undu
+    jp nz, Undo
     pop af
     jp isS
     jp saveKey
@@ -286,7 +286,7 @@ isE:
     pop bc
     call hasCollision       
     cp 0
-    jp nz, Undu             ; if now collides goes back 
+    jp nz, Undo             ; if now collides goes back 
     pop af
     jp saveKey
 
@@ -305,7 +305,7 @@ isQ:
     pop bc
     call hasCollision
     cp 0
-    jp nz, Undu
+    jp nz, Undo
     pop af
     jp saveKey
 
@@ -370,9 +370,13 @@ pressloop:                  ;this waits until you release the key to make sure y
     out ($fe), a
     call CLEARSCR       
     jp restart            ; clears the screen and starts again
+
+;------------------------------------------------------------------------------------
+;                               RANDOM TETROMINO
+;------------------------------------------------------------------------------------
 Random:
     push hl
-loopRandom: ; Javier Chocano 
+loopRandom: ; Javier Chocano. (First 4 lines of code given are uploaded in canvas for the student use)
     ld a, r ; r is the “Refresh Register” for DRAM
     and 7 ; Keep only the three less significant bits
     cp 7 ; Make sure the result is not 7 (we want 0..6)
@@ -393,7 +397,7 @@ loopRandom: ; Javier Chocano
     jr z, is0
     jr loopRandom
 is0:
-    ld hl, OB0 
+    ld hl, OB0       ; figure loaded in hl
     jr endRandom
 is1:
     ld hl, IB0 
@@ -424,7 +428,9 @@ endRandom:
     pop ix  
     pop hl
     ret 
-
+;------------------------------------------------------------------------------------
+;                               WINDOW WITH THE NEXT TETRO
+;------------------------------------------------------------------------------------
 NextWindowTetro:    ;prints with black the section of the next tetromino
     push af
     push bc
@@ -451,20 +457,22 @@ NextWindowTetro:    ;prints with black the section of the next tetromino
     pop bc
     pop af
     ret
-
+;------------------------------------------------------------------------------------
+;                             WINDOW WITH THE KEYS
+;------------------------------------------------------------------------------------
 WindowTuto:     ;prints the keys in the down left corner
     push af
     push bc
-    ld a, 0
-    ld b, 15
+    ld a, 0         ; color black loaded in a
+    ld b, 15        
     ld c, 19
     ld d, 10
-    call line
+    call line       ; the line is printed on screen
     inc b
     ld c, 19
     ld d, 10
     call line
-    inc b
+    inc b           ; the position of b increases
     ld c, 19
     ld d, 10
     call line
@@ -502,7 +510,9 @@ WindowTuto:     ;prints the keys in the down left corner
     pop bc
     pop af
     ret
-
+;------------------------------------------------------------------------------------
+;                                       CHECK LINES
+;------------------------------------------------------------------------------------
 Checklines:             ;checks if the lines are complete
     push hl
     push bc
@@ -530,13 +540,13 @@ newline:
     ld a, b
     cp 2
     jp z, endCheckLine
-isline:                 ;
+isline:                 
     ld a, 7
     out ($fe), a
     ld a, 0 
     ld c, 2
     ld d, 15
-    call line ;pintamos la linea de negro
+    call line ; we paint the row in black
     ld c, 2
     
 moveLines:          ; chakes the color of the pixel and goes 1 down to paste the same color, moving all down 1 line
@@ -556,7 +566,9 @@ endCheckLine:
     pop bc
     pop hl
     ret
-
+;------------------------------------------------------------------------------------
+;                               POSITION OF HL
+;------------------------------------------------------------------------------------
 posMem:                     ;gives the memory position of the pixel       
     ; HL=$5800 + 32*Y + X
     ; y (0-23) , x (0-31), 
@@ -583,9 +595,11 @@ posMem:                     ;gives the memory position of the pixel
     pop de
     pop af
     ret
+;------------------------------------------------------------------------------------
+;                               UNDO
+;------------------------------------------------------------------------------------
 
-
-Undu:               ;loads the gamepositions before the move
+Undo:               ;loads the gamepositions before the move
     push ix
     ld ix, GameX
     ld c, (ix)
@@ -600,7 +614,9 @@ Undu:               ;loads the gamepositions before the move
     pop af
     jp isS
     jp saveKey
-
+;------------------------------------------------------------------------------------
+;                               DRAW TETROMINO
+;------------------------------------------------------------------------------------
 DrawTetromino:          ;prints the tetromino
     push bc
     push ix
@@ -665,7 +681,9 @@ endtetromino:
     pop bc
     ret
 
-;////////////////////////////////////////////////
+;------------------------------------------------------------------------------------
+;                               DELETE TETROMINO
+;------------------------------------------------------------------------------------
 
 DeleteTetromino:        ;same as draw but paints in black
     push bc
@@ -704,7 +722,7 @@ VectorXData2:
 
 draw2:
     pop af
-    ld a, 0
+    ld a, 0             ; Paints the tetromino in black, erasing it.
     call DOTYXC
     dec d
     inc c
@@ -714,13 +732,13 @@ draw2:
 finfila2: 
     ld a, e ; a = yfigura
     cp 1
-    jp z, endtetromino2  ; si no hay mÃ¡s filas se termina el tetromino
+    jp z, endtetromino2  ;  if there aren't more rows, the tetromino ends
     ld a, c
     sub (ix)
     ld c, a
-    ld d, (ix) ; reiniciamos el valor de x
-    dec e  ; decrementamos la yfigura
-    inc b  ; incrementamos la sig pos en pantalla
+    ld d, (ix) ; we reset the value of x
+    dec e  ;  yfigura is decreased 
+    inc b  ; the next position on screen is increased
     pop af
     jp VectorXData2
 
@@ -732,7 +750,9 @@ endtetromino2:
     pop ix
     pop bc
     ret
-;//////////////
+;------------------------------------------------------------------------------------
+;                               PIXEL ON SCREEN
+;------------------------------------------------------------------------------------
 
 DOTYXC:             ; draw a pixel in the screen depending on the parameters introduced
     ; HL=$5800 + 32*Y + X
@@ -771,7 +791,9 @@ colorx3:
     pop de
     pop af
     ret
-
+;------------------------------------------------------------------------------------
+;                             PIXEL ON SCREEN (not changing the color)
+;------------------------------------------------------------------------------------
 DOTYXCHD:             ; draw a pixel in the screen depending on the parameters introduced
     ; HL=$5800 + 32*Y + X
     ; y (0-23) , x (0-31), color (0-15)
@@ -812,7 +834,9 @@ savePos:            ;saves the actual values of the tetromino
     ld (ix), hl
     pop ix
     ret
-
+;-------------------------------------------------------------------------------------------------------
+;                                                COLLISIONS
+;-------------------------------------------------------------------------------------------------------
 hasCollision:       ;checks colisions with the screen
     push bc
     push ix
@@ -852,19 +876,19 @@ drawColi:
     inc hl
     jp VectorXDataColi
     
-finfilaColi: 
+finfilaColi:            ; looks if it is the end of the rows that has collisions
     ld a, e 
-    cp 1
+    cp 1                ;checks if it is the last one
     jp z, endtetrominoColi 
     ld a, c
-    sub (ix)
+    sub (ix)            ; x is restored
     ld c, a
     ld d, (ix) 
     dec e  
     inc b  
     jp VectorXDataColi
 
-endtetrominoColi:
+endtetrominoColi:       ; the value of a is restored
     ld a, 0
 endColi:
     pop de
