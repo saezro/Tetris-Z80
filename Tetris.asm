@@ -81,12 +81,12 @@ loop:
 gameboard:                  ; prints the gameboard with all ther parts (blueframe, blackframe, title)
 frame:
     ld a, 1
-    out ($fe), a
-    ld a, 1
+    out ($fe), a    ; blue border
+    ld a, 1         ;color
     ld b, 23        ; y
 looptetrisblueframe:
-    ld c, 0
-    ld d, 31
+    ld c, 0         ;x
+    ld d, 31        ;long
     call line 
     djnz looptetrisblueframe
     ld b, 0
@@ -102,12 +102,12 @@ looptetrisblackframe:
     call line
     djnz looptetrisblackframe
     ld b, 2
-    ld a, %11101011         ;%11101011 pink-blue
+    ld a, %11101011         ;%11101011 pink-blue blinking
 title:
     ld c, 22
     ld d, 5
-    call lineHD
-    call WindowTuto
+    call lineHD             ;line without multipliying the color
+    call WindowTuto         
     ret
 
 main:
@@ -360,7 +360,7 @@ pressloop:                  ;this waits until you release the key to make sure y
     and $1F
     cp $1F
     jr nz, pressloop
-    ld bc, $7FFE ; ASD
+    ld bc, $7FFE                ; Spacebar
     in a, (c) 
     and $1F
     cp $1F
