@@ -1,0 +1,144 @@
+# file opened: c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(1): error: Invalid labelname: {
+ 1    0000              {
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(2): error: Unrecognized instruction: "version"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(2): error: Unexpected: "version"
+ 2    0000                  "version"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(2): error: Unrecognized instruction: "0.2.0",
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(2): error: Unexpected: "0.2.0",
+ 2    0000                "0.2.0",
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(3): error: Unrecognized instruction: "configurations"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(3): error: Unexpected: "configurations"
+ 3    0000                  "configurations"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(3): error: Unrecognized instruction: [
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(3): error: Unexpected: [
+ 3    0000                [
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(4): error: Unrecognized instruction: {
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(4): error: Unexpected: {
+ 4    0000                      {
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(5): error: Unrecognized instruction: "rootFolder"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(5): error: Unexpected: "rootFolder"
+ 5    0000                          "rootFolder"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(5): error: Unrecognized instruction: "${workspaceFolder}",
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(5): error: Unexpected: "${workspaceFolder}",
+ 5    0000                "${workspaceFolder}",
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(6): error: Unrecognized instruction: "type"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(6): error: Unexpected: "type"
+ 6    0000                          "type"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(6): error: Unrecognized instruction: "dezog",
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(6): error: Unexpected: "dezog",
+ 6    0000                "dezog",
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(7): error: Unrecognized instruction: "request"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(7): error: Unexpected: "request"
+ 7    0000                          "request"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(7): error: Unrecognized instruction: "launch",
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(7): error: Unexpected: "launch",
+ 7    0000                "launch",
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(8): error: Unrecognized instruction: "name"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(8): error: Unexpected: "name"
+ 8    0000                          "name"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(8): error: Unrecognized instruction: "Simulator",
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(8): error: Unexpected: "Simulator",
+ 8    0000                "Simulator",
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(9): error: Unrecognized instruction: "remoteType"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(9): error: Unexpected: "remoteType"
+ 9    0000                          "remoteType"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(9): error: Unrecognized instruction: "zsim",
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(9): error: Unexpected: "zsim",
+ 9    0000                "zsim",
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(10): error: Unrecognized instruction: "zsim"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(10): error: Unexpected: "zsim"
+10    0000                          "zsim"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(10): error: Unrecognized instruction: {
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(10): error: Unexpected: {
+10    0000                {
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(11): error: Unrecognized instruction: "memoryModel"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(11): error: Unexpected: "memoryModel"
+11    0000                              "memoryModel"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(11): error: Unrecognized instruction: "ZX48K",
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(11): error: Unexpected: "ZX48K",
+11    0000                "ZX48K",
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(12): error: Unrecognized instruction: "vsyncInterrupt"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(12): error: Unexpected: "vsyncInterrupt"
+12    0000                              "vsyncInterrupt"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(12): error: Unrecognized instruction: true,
+12    0000                true,
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(13): error: Unrecognized instruction: "ulaScreen"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(13): error: Unexpected: "ulaScreen"
+13    0000                              "ulaScreen"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(13): error: Unrecognized instruction: true,
+13    0000                true,
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(14): error: Unrecognized instruction: "zxKeyboard"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(14): error: Unexpected: "zxKeyboard"
+14    0000                              "zxKeyboard"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(14): error: Unrecognized instruction: true,
+14    0000                true,
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(15): error: Unrecognized instruction: "zxBorderWidth"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(15): error: Unexpected: "zxBorderWidth"
+15    0000                              "zxBorderWidth"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(15): error: Unrecognized instruction: 20,
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(15): error: Unexpected: 20,
+15    0000                20,
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(16): error: Unrecognized instruction: "zxBeeper"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(16): error: Unexpected: "zxBeeper"
+16    0000                              "zxBeeper"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(16): error: Unrecognized instruction: true
+16    0000                true
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(17): error: Unrecognized instruction: },
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(17): error: Unexpected: },
+17    0000                          },
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(18): error: Unrecognized instruction: "sjasmplus"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(18): error: Unexpected: "sjasmplus"
+18    0000                          "sjasmplus"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(18): error: Unrecognized instruction: [
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(18): error: Unexpected: [
+18    0000                [
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(19): error: Unrecognized instruction: {
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(19): error: Unexpected: {
+19    0000                              {
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(20): error: Unrecognized instruction: "path"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(20): error: Unexpected: "path"
+20    0000                                  "path"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(20): error: Unrecognized instruction: "${fileDirname}/${fileBasenameNoExtension}.sld"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(20): error: Unexpected: "${fileDirname}/${fileBasenameNoExtension}.sld"
+20    0000                "${fileDirname}/${fileBasenameNoExtension}.sld"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(21): error: Unrecognized instruction: }
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(21): error: Unexpected: }
+21    0000                              }
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(22): error: Unrecognized instruction: ],
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(22): error: Unexpected: ],
+22    0000                          ],
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(23): error: Unrecognized instruction: "topOfStack"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(23): error: Unexpected: "topOfStack"
+23    0000                          "topOfStack"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(23): error: Unrecognized instruction: "0",
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(23): error: Unexpected: "0",
+23    0000                "0",
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(24): error: Unrecognized instruction: "loadObjs"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(24): error: Unexpected: "loadObjs"
+24    0000                         "loadObjs"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(24): error: Unrecognized instruction: [{"path"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(24): error: Unexpected: [{"path"
+24    0000                [{"path"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(24): error: Unrecognized instruction: "${fileDirname}/${fileBasenameNoExtension}.bin", "start"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(24): error: Unexpected: "${fileDirname}/${fileBasenameNoExtension}.bin", "start"
+24    0000                "${fileDirname}/${fileBasenameNoExtension}.bin", "start"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(24): error: Unrecognized instruction: "0x8000"}],
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(24): error: Unexpected: "0x8000"}],
+24    0000                "0x8000"}],
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(25): error: Unrecognized instruction: "execAddress"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(25): error: Unexpected: "execAddress"
+25    0000                         "execAddress"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(25): error: Unrecognized instruction: "0x8000"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(25): error: Unexpected: "0x8000"
+25    0000                "0x8000"
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(26): error: Unrecognized instruction: }
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(26): error: Unexpected: }
+26    0000                      }
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(27): error: Unrecognized instruction: ]
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(27): error: Unexpected: ]
+27    0000                  ]
+c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json(28): error: Invalid labelname: }
+28    0000              }
+29    0000
+# file closed: c:\Users\USER\Documents\Segundo curso\AOC\AOC_Template\.vscode\launch.json

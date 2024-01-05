@@ -1,0 +1,1662 @@
+# file opened: A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm
+  1   0000
+  2   0000              ; Rodrigo SÃ¡ez, Cristina FernÃ¡ndez, Claudia MartÃ­nez
+  3   0000
+  4   0000                DEVICE ZXSPECTRUM48
+  5   0000              	SLDOPT COMMENT WPMEM, LOGPOINT, ASSERTION
+  6   0000                  org $8000               ; Program is located from memory address $8000 = 32768
+  7   8000
+  8   8000              begin:
+  9   8000 F3               di              ; Disable Interrupts
+ 10   8001 31 00 00         ld sp, 0         ; Set stack pointer to top of ram (RAMTOP)
+ 11   8004
+ 12   8004              ;-------------------------------------------------------------------------------------------------
+ 13   8004              ; Student Code
+ 14   8004
+ 15   8004 01           Acceptkey: db 1
+ 16   8005 00           Key: db 0
+ 17   8006 00           aux: db 0
+ 18   8007
+ 19   8007              keyW equ 1
+ 20   8007              keyS equ 2
+ 21   8007              keyD equ 3
+ 22   8007              keyA equ 4
+ 23   8007              keyE equ 5
+ 24   8007              keyQ equ 6
+ 25   8007              keySp equ 7
+ 26   8007
+ 27   8007              ;------------------------------------------------------------------
+ 28   8007              GameStatusStruct:
+ 29   8007              ;------------------------------------------------------------------
+ 30   8007 00           GameX: db 0 ; X position of current tetromino
+ 31   8008 00           GameY: db 0 ; Y position of current tetromino
+ 32   8009 00 00        TetroPtr: dw 0 ; Pointer to current tetromino
+ 33   800B 00 00        DownCounter: dw 0 ; Counter for tetromino going Down
+ 34   800D              UndoKey
+ 34   800D 00             db 0 ; Code of opposite key for undo
+ 35   800E 00 00        NewTetroPtr: dw 0 ; Pointer to current tetromino
+ 36   8010
+ 37   8010
+ 38   8010              start:
+ 39   8010 DD 21 F2 8A      ld ix, Welcometext ;	aims to the string
+ 40   8014 3E 4D            ld a, %01001101		 ;	color
+ 41   8016 CD 02 87         call printtext     ;	prints the first screen
+ 42   8019 06 10            ld b, 16					 ; Y of where is going to be printed
+ 43   801B 0E 02            ld c, 2						 ; X of where is going to be printed
+ 44   801D 3E 05            ld a, %0000101
+ 45   801F DD 21 BC 8B      ld ix, pressText
+ 46   8023 CD 22 87         call PRINTAT        ; Print a string in a position and attributes as per registers (MATERIAL FROM CANVAS)
+ 47   8026 CD B1 80         call waitKey				; waits for a key to be pressed (The spacebar)
+ 48   8029 CD A6 87         call CLEARSCR				; The screen is cleared
+ 49   802C
+ 50   802C              Tutorialtexts:						;prints the second screen (TUTORIAL OF THE KEYS)
+ 51   802C DD 21 3E 8B      ld ix, TutorialText   ; aims to the string
+ 52   8030 3E 07            ld a, %0000111 		    ; color
+ 53   8032 06 04            ld b, 4               ; Y
+ 54   8034 0E 02            ld c, 2	              ; X
+ 55   8036 CD 22 87         call PRINTAT          ; Print the string
+ 56   8039 06 08            ld b, 8			  			  ; the rest of the code of this function is the same
+ 57   803B 0E 02            ld c, 2
+ 58   803D 3E 07            ld a, %0000111
+ 59   803F DD 21 48 8B      ld ix, tutText
+ 60   8043 CD 22 87         call PRINTAT
+ 61   8046 06 10            ld b, 16
+ 62   8048 0E 02            ld c, 2
+ 63   804A 3E 05            ld a, %0000101
+ 64   804C DD 21 BC 8B      ld ix, pressText ;
+ 65   8050 CD 22 87         call PRINTAT
+ 66   8053 CD B1 80         call waitKey
+ 67   8056 CD A6 87         call CLEARSCR
+ 68   8059              restart:
+ 69   8059 CD D1 86         call hrBKG					; fills the full screen with a char pattern (blockgraph)(MATERIAL FROM CANVAS)
+ 70   805C CD 72 80         call gameboard 			; prints the gameboard
+ 71   805F 06 02            ld b, 2
+ 72   8061 0E 16            ld c, 22
+ 73   8063 3E EB            ld a, %11101011     ;%11101011 pink-blue. The color blinks and changes.
+ 74   8065 DD 21 37 8B      ld ix, Tetristext   ; The word "TETRIS" is painten on screen
+ 75   8069 CD 22 87         call PRINTAT
+ 76   806C C3 A8 80         jp main							; jumps to the main
+ 77   806F
+ 78   806F              loop:
+ 79   806F C3 E6 80         jp Readkey
+ 80   8072
+ 81   8072              gameboard:                  ; prints the gameboard with all ther parts (blueframe, blackframe, title)
+ 82   8072              frame:
+ 83   8072 3E 01            ld a, 1
+ 84   8074 D3 FE            out ($fe), a
+ 85   8076 3E 01            ld a, 1
+ 86   8078 06 17            ld b, 23        ; y
+ 87   807A              looptetrisblueframe:
+ 88   807A 0E 00            ld c, 0
+ 89   807C 16 1F            ld d, 31
+ 90   807E CD BE 85         call line
+ 91   8081 10 F7            djnz looptetrisblueframe
+ 92   8083 06 00            ld b, 0
+ 93   8085 0E 00            ld c, 0
+ 94   8087 16 1F            ld d, 31
+ 95   8089 CD BE 85         call line
+ 96   808C                  ;************
+ 97   808C 06 16            ld b, 22
+ 98   808E 3E 00            ld a, 0
+ 99   8090              looptetrisblackframe:
+100   8090 0E 02            ld c, 2
+101   8092 16 0F            ld d, 15
+102   8094 CD BE 85         call line
+103   8097 10 F7            djnz looptetrisblackframe
+104   8099 06 02            ld b, 2
+105   809B 3E EB            ld a, %11101011         ;%11101011 pink-blue
+106   809D              title:
+107   809D 0E 16            ld c, 22
+108   809F 16 05            ld d, 5
+109   80A1 CD AC 85         call lineHD
+110   80A4 CD 48 83         call WindowTuto
+111   80A7 C9               ret
+112   80A8
+113   80A8              main:
+114   80A8 CD B7 82         call Random  ;creates a new random tetromino to be used in the next turn
+115   80AB 3E 00            ld a, 0
+116   80AD F5               push af
+117   80AE C3 47 82         jp firstTetro
+118   80B1
+119   80B1              waitKey:                ;loop that ends when a key is pressed
+120   80B1 06 10            ld b, 16
+121   80B3 0E 02            ld c, 2
+122   80B5 3E 05            ld a, %0000101
+123   80B7 DD 21 F8 8B      ld ix, pressText3   ;prints the presstext 3 times to create the animation of the 3 dots
+124   80BB CD 22 87         call PRINTAT
+125   80BE 06 10            ld b, 16
+126   80C0 0E 02            ld c, 2
+127   80C2 3E 05            ld a, %0000101
+128   80C4 DD 21 DA 8B      ld ix, pressText2
+129   80C8 CD 22 87         call PRINTAT
+130   80CB 01 FE 7F         ld bc, $7FFE ; spacebar
+131   80CE ED 78            in a, (c)
+132   80D0 E6 1F            and $1F
+133   80D2 FE 1F            cp $1F
+134   80D4 20 0F            jr nz, endwait
+135   80D6 06 10            ld b, 16
+136   80D8 0E 02            ld c, 2
+137   80DA 3E 05            ld a, %0000101
+138   80DC DD 21 BC 8B      ld ix, pressText
+139   80E0 CD 22 87         call PRINTAT
+140   80E3 18 CC            jr waitKey
+141   80E5              endwait:
+142   80E5 C9               ret
+143   80E6
+144   80E6              Readkey:
+145   80E6 F5               push af
+146   80E7 3A 04 80         ld a, (Acceptkey)      ; Load the value of Acceptkey into register a
+147   80EA FE 00            cp 0                   ; Compare with 0
+148   80EC 20 2E            jr nz, iniRead         ; if it's not 0 it will go to iniRead
+149   80EE C5               push bc
+150   80EF 01 FE FB         ld bc, $FBFE ; QWE
+151   80F2 ED 78            in a, (c)
+152   80F4 E6 1F            and $1F
+153   80F6 FE 1F            cp $1F
+154   80F8 20 1D            jr nz, endtec
+155   80FA 01 FE FD         ld bc, $FDFE ; ASD
+156   80FD ED 78            in a, (c)
+157   80FF E6 1F            and $1F
+158   8101 FE 1F            cp $1F
+159   8103 20 12            jr nz, endtec
+160   8105 01 FE 7F         ld bc, $7FFE ; spacebar
+161   8108 ED 78            in a, (c)
+162   810A E6 1F            and $1F
+163   810C FE 1F            cp $1F
+164   810E 20 07            jr nz, endtec
+165   8110 3E 01            ld a, 1
+166   8112 32 04 80         ld (Acceptkey), a
+167   8115 D3 FE            out ($fe), a
+168   8117
+169   8117              endtec:
+170   8117 C1               pop bc
+171   8118              endRead:
+172   8118 F1               pop af
+173   8119 C3 6F 80         jp loop
+174   811C
+175   811C              iniRead:                ;diferenciates the key pressed
+176   811C CD 22 85         call savePos
+177   811F 3E 00            ld a, 0                ; Load value zero into register a
+178   8121 32 05 80         ld (Key), A            ; Store that zero in the variable Key
+179   8124 3E FB            ld a, $FB
+180   8126 DB FE            in a, ($FE)            ; input the key fromn that port
+181   8128 CB 4F            bit 1, A               ; with 'bit' we check that is the key w
+182   812A CA 60 81         jp z, isW              ; if it returns a 0, it jumps to isW
+183   812D CB 47            bit 0, a
+184   812F CA 09 82         jp z, isQ
+185   8132 CB 57            bit 2, a
+186   8134 CA E0 81         jp z, isE
+187   8137 3E FD            ld a, $FD
+188   8139 DB FE            in a, ($FE)
+189   813B CB 4F            bit 1, A
+190   813D CA 8F 81         jp z, isS
+191   8140 CB 57            bit 2, A
+192   8142 CA 76 81         jp z, isD
+193   8145 CB 47            bit 0, A
+194   8147 CA C7 81         jp z, isA
+195   814A 3E 7F            ld a, $7F
+196   814C DB FE            in a, ($FE)
+197   814E CB 47            bit 0, A
+198   8150 CA 56 81         jp z, isSp
+199   8153 C3 18 81         jp endRead
+200   8156
+201   8156              isSp:
+202   8156 3E 07            ld a, 7
+203   8158 32 05 80         ld (Key), A          ;loads 7 into key to do a loop in isS
+204   815B 3E 00            ld a, 0
+205   815D C3 8F 81         jp isS               ;like pressing S makes the tetromino go down
+206   8160
+207   8160              isW:
+208   8160 CD 22 85         call savePos
+209   8163 3E 01            ld a, keyW          ; Load variable keyW in register a
+210   8165 F5               push af
+211   8166 CD 91 84         call DeleteTetromino    ;first deletes the tetromino to make sure doesnt collides with himself
+212   8169 05               dec b
+213   816A CD 3F 85         call hasCollision       ; detects if collides with something, register A has the color of the colision, if is 0 then theres no colision
+214   816D FE 00            cp 0
+215   816F C2 15 84         jp nz, Undu         ; if colides goes to undu to restore the position
+216   8172 F1               pop af
+217   8173 C3 32 82         jp saveKey          ; jumps to saveKey to save that key
+218   8176
+219   8176              isD:
+220   8176 CD 22 85         call savePos
+221   8179 3E 03            ld a, keyD
+222   817B F5               push af
+223   817C CD 91 84         call DeleteTetromino
+224   817F 0C               inc c
+225   8180 CD 3F 85         call hasCollision
+226   8183 FE 00            cp 0
+227   8185 C2 15 84         jp nz, Undu
+228   8188 F1               pop af
+229   8189 C3 8F 81         jp isS
+230   818C C3 32 82         jp saveKey
+231   818F
+232   818F              isS:
+233   818F CD 22 85         call savePos
+234   8192 3E 02            ld a, keyS
+235   8194 F5               push af
+236   8195 CD 91 84         call DeleteTetromino
+237   8198 04               inc b
+238   8199 CD 3F 85         call hasCollision
+239   819C FE 00            cp 0
+240   819E C2 40 82         jp nz, endTurn          ; if colides means it cant move anymore so the turn ends
+241   81A1 CD 91 84         call DeleteTetromino
+242   81A4 04               inc b
+243   81A5 CD 3F 85         call hasCollision   ;checks the collision with y-1 again to make sure it doesnt move more next move, so if collides now doesnt
+244   81A8 FE 00            cp 0                ;need a step of "confirmation" to end the turn
+245   81AA C2 40 82         jp nz, endTurn
+246   81AD 05               dec b
+247   81AE DD E5            push ix
+248   81B0 DD 21 05 80      ld ix, Key          ; if the key pressed was "Spacebar" (7), means it needs to go down until collides
+249   81B4 DD 7E 00         ld a, (ix)
+250   81B7 FE 07            cp 7
+251   81B9 CA C2 81         jp z, repS
+252   81BC DD E1            pop ix
+253   81BE F1               pop af
+254   81BF C3 32 82         jp saveKey
+255   81C2
+256   81C2              repS:
+257   81C2 DD E1            pop ix
+258   81C4 F1               pop af
+259   81C5 18 C8            jr isS
+260   81C7
+261   81C7              isA:
+262   81C7 CD 22 85         call savePos
+263   81CA 3E 04            ld a, keyA
+264   81CC F5               push af
+265   81CD CD 91 84         call DeleteTetromino
+266   81D0 0D               dec c
+267   81D1 CD 3F 85         call hasCollision
+268   81D4 FE 00            cp 0
+269   81D6 C2 15 84         jp nz, Undu
+270   81D9 F1               pop af
+271   81DA C3 8F 81         jp isS
+272   81DD C3 32 82         jp saveKey
+273   81E0
+274   81E0              isE:
+275   81E0 CD 22 85         call savePos
+276   81E3 3E 05            ld a, keyE
+277   81E5 F5               push af
+278   81E6 C5               push bc
+279   81E7 DD E5            push ix
+280   81E9 CD 91 84         call DeleteTetromino    ;to rotate we need also to delete it first
+281   81EC 01 05 00         ld bc, ptrOffsetRR      ;we change the ptr to the offset to the right
+282   81EF E5 DD E1         ld ix, hl
+283   81F2 DD 09            add ix, bc
+284   81F4 DD 6E 00 DD      ld hl, (ix)
+284   81F8 66 01
+285   81FA DD E1            pop ix
+286   81FC C1               pop bc
+287   81FD CD 3F 85         call hasCollision
+288   8200 FE 00            cp 0
+289   8202 C2 15 84         jp nz, Undu             ; if now collides goes back
+290   8205 F1               pop af
+291   8206 C3 32 82         jp saveKey
+292   8209
+293   8209              isQ:
+294   8209 CD 22 85         call savePos
+295   820C 3E 06            ld a, keyQ
+296   820E F5               push af
+297   820F C5               push bc
+298   8210 DD E5            push ix
+299   8212 CD 91 84         call DeleteTetromino
+300   8215 01 03 00         ld bc, ptrOffsetRL
+301   8218 E5 DD E1         ld ix, hl
+302   821B DD 09            add ix, bc
+303   821D DD 6E 00 DD      ld hl, (ix)
+303   8221 66 01
+304   8223 DD E1            pop ix
+305   8225 C1               pop bc
+306   8226 CD 3F 85         call hasCollision
+307   8229 FE 00            cp 0
+308   822B C2 15 84         jp nz, Undu
+309   822E F1               pop af
+310   822F C3 32 82         jp saveKey
+311   8232
+312   8232              saveKey:
+313   8232 32 05 80         ld (Key), A          ; We store what we have in register a in the variable Key
+314   8235 3E 00            ld a, 0              ; Load 0 in register a
+315   8237 32 04 80         ld (Acceptkey), a    ; Store 0 in the variable Acceptkey
+316   823A CD 3D 84         call DrawTetromino
+317   823D C3 18 81         jp endRead
+318   8240
+319   8240              endTurn:
+320   8240 05               dec b
+321   8241 CD 3D 84         call DrawTetromino  ;if the turn ends it draw it again
+322   8244 CD AF 83         call Checklines       ; if a new tetromino is pressed we need to check if a line is completed
+323   8247              firstTetro:
+324   8247 DD E5            push ix
+325   8249 DD 21 0E 80      ld ix, NewTetroPtr
+326   824D DD 6E 00 DD      ld hl,(ix)              ; loads hl with the new ptr that was shown in the screen
+326   8251 66 01
+327   8253 DD E1            pop ix
+328   8255 CD B7 82         call Random             ; creates a new tetromino randomly
+329   8258 06 02            ld b, 2
+330   825A 0E 08            ld c, 8
+331   825C F1               pop af
+332   825D CD 3F 85         call hasCollision
+333   8260 FE 00            cp 0
+334   8262 C2 78 82         jp nz, endgame           ; if collides at the start means that the game ends
+335   8265 04               inc b
+336   8266 CD 3F 85         call hasCollision           ; like with the isS, checks the colision with y-1 because if has something below it ends the game
+337   8269 05               dec b
+338   826A FE 00            cp 0
+339   826C C2 75 82         jp nz, endgame2
+340   826F CD 22 85         call savePos
+341   8272 C3 32 82         jp saveKey
+342   8275              endgame2:
+343   8275 CD 3D 84         call DrawTetromino      ;if has something below can print the last tetromino (just to be shown)
+344   8278              endgame:
+345   8278 3E 02            ld a, 2
+346   827A D3 FE            out ($fe), a
+347   827C DD 21 D1 8A      ld ix, Endgametext
+348   8280 3E 97            ld a, %10010111
+349   8282 06 0A            ld b, 10
+350   8284 0E 00            ld c, 0
+351   8286 CD 22 87         call PRINTAT            ;show the end text
+352   8289              pressloop:                  ;this waits until you release the key to make sure you can see the end screen
+353   8289 01 FE FB         ld bc, $FBFE ; QWE
+354   828C ED 78            in a, (c)
+355   828E E6 1F            and $1F
+356   8290 FE 1F            cp $1F
+357   8292 20 F5            jr nz, pressloop
+358   8294 01 FE FD         ld bc, $FDFE ; ASD
+359   8297 ED 78            in a, (c)
+360   8299 E6 1F            and $1F
+361   829B FE 1F            cp $1F
+362   829D 20 EA            jr nz, pressloop
+363   829F 01 FE 7F         ld bc, $7FFE ; ASD
+364   82A2 ED 78            in a, (c)
+365   82A4 E6 1F            and $1F
+366   82A6 FE 1F            cp $1F
+367   82A8 20 DF            jr nz, pressloop
+368   82AA CD B1 80         call waitKey        ;shows the press to continue text and waits until you press a key
+369   82AD 3E 01            ld a, 1
+370   82AF D3 FE            out ($fe), a
+371   82B1 CD A6 87         call CLEARSCR
+372   82B4 C3 59 80         jp restart            ; clears the screen and starts again
+373   82B7              Random:
+374   82B7 E5               push hl
+375   82B8              loopRandom: ; Javier Chocano
+376   82B8 ED 5F            ld a, r ; r is the “Refresh Register” for DRAM
+377   82BA E6 07            and 7 ; Keep only the three less significant bits
+378   82BC FE 07            cp 7 ; Make sure the result is not 7 (we want 0..6)
+379   82BE 28 F8            jr z, loopRandom ; Read r again if we got a 7
+380   82C0 FE 06            cp 6                ;depending on the number aims to the ptr
+381   82C2 28 38            jr z, is6
+382   82C4 FE 05            cp 5
+383   82C6 28 2F            jr z, is5
+384   82C8 FE 04            cp 4
+385   82CA 28 26            jr z, is4
+386   82CC FE 03            cp 3
+387   82CE 28 1D            jr z, is3
+388   82D0 FE 02            cp 2
+389   82D2 28 14            jr z, is2
+390   82D4 FE 01            cp 1
+391   82D6 28 0B            jr z, is1
+392   82D8 FE 00            cp 0
+393   82DA 28 02            jr z, is0
+394   82DC 18 DA            jr loopRandom
+395   82DE              is0:
+396   82DE 21 E0 85         ld hl, OB0
+397   82E1 18 1E            jr endRandom
+398   82E3              is1:
+399   82E3 21 EB 85         ld hl, IB0
+400   82E6 18 19            jr endRandom
+401   82E8              is2:
+402   82E8 21 01 86         ld hl, ZB0
+403   82EB 18 14            jr endRandom
+404   82ED              is3:
+405   82ED 21 1B 86         ld hl, SB0
+406   82F0 18 0F            jr endRandom
+407   82F2              is4:
+408   82F2 21 35 86         ld hl, LB0
+409   82F5 18 0A            jr endRandom
+410   82F7              is5:
+411   82F7 21 69 86         ld hl, JB0
+412   82FA 18 05            jr endRandom
+413   82FC              is6:
+414   82FC 21 9D 86         ld hl, TB0
+415   82FF 18 00            jr endRandom
+416   8301              endRandom:
+417   8301 DD E5            push ix
+418   8303 DD 21 0E 80      ld ix, NewTetroPtr
+419   8307 DD 75 00 DD      ld (ix), hl
+419   830B 74 01
+420   830D CD 1B 83         call NextWindowTetro    ;prints all black where is going to be printed
+421   8310 06 07            ld b, 7
+422   8312 0E 14            ld c, 20
+423   8314 CD 3D 84         call DrawTetromino
+424   8317 DD E1            pop ix
+425   8319 E1               pop hl
+426   831A C9               ret
+427   831B
+428   831B              NextWindowTetro:    ;prints with black the section of the next tetromino
+429   831B F5               push af
+430   831C C5               push bc
+431   831D 3E 00            ld a, 0
+432   831F 06 06            ld b, 6
+433   8321 0E 13            ld c, 19
+434   8323 16 05            ld d, 5
+435   8325 CD BE 85         call line
+436   8328 04               inc b
+437   8329 0E 13            ld c, 19
+438   832B 16 05            ld d, 5
+439   832D CD BE 85         call line
+440   8330 04               inc b
+441   8331 0E 13            ld c, 19
+442   8333 16 05            ld d, 5
+443   8335 CD BE 85         call line
+444   8338 04               inc b
+445   8339 0E 13            ld c, 19
+446   833B 16 05            ld d, 5
+447   833D CD BE 85         call line
+448   8340 04               inc b
+449   8341 0E 13            ld c, 19
+450   8343 16 05            ld d, 5
+451   8345 C1               pop bc
+452   8346 F1               pop af
+453   8347 C9               ret
+454   8348
+455   8348              WindowTuto:     ;prints the keys in the down left corner
+456   8348 F5               push af
+457   8349 C5               push bc
+458   834A 3E 00            ld a, 0
+459   834C 06 0F            ld b, 15
+460   834E 0E 13            ld c, 19
+461   8350 16 0A            ld d, 10
+462   8352 CD BE 85         call line
+463   8355 04               inc b
+464   8356 0E 13            ld c, 19
+465   8358 16 0A            ld d, 10
+466   835A CD BE 85         call line
+467   835D 04               inc b
+468   835E 0E 13            ld c, 19
+469   8360 16 0A            ld d, 10
+470   8362 CD BE 85         call line
+471   8365 04               inc b
+472   8366 0E 13            ld c, 19
+473   8368 16 0A            ld d, 10
+474   836A CD BE 85         call line
+475   836D 04               inc b
+476   836E 0E 13            ld c, 19
+477   8370 16 0A            ld d, 10
+478   8372 CD BE 85         call line
+479   8375 04               inc b
+480   8376 0E 13            ld c, 19
+481   8378 16 0A            ld d, 10
+482   837A CD BE 85         call line
+483   837D 04               inc b
+484   837E 0E 13            ld c, 19
+485   8380 16 0A            ld d, 10
+486   8382 CD BE 85         call line
+487   8385 DD 21 16 8C      ld ix, ingameTutText1       ;prints the letters of the keys
+488   8389 3E 06            ld a, %0000110
+489   838B 06 10            ld b, 16
+490   838D 0E 14            ld c, 20
+491   838F CD 22 87         call PRINTAT
+492   8392 06 12            ld b, 18
+493   8394 0E 14            ld c, 20
+494   8396 3E 06            ld a, %0000110
+495   8398 DD 21 1E 8C      ld ix, ingameTutText2
+496   839C CD 22 87         call PRINTAT
+497   839F 06 14            ld b, 20
+498   83A1 0E 14            ld c, 20
+499   83A3 3E 06            ld a, %0000110
+500   83A5 DD 21 26 8C      ld ix, ingameTutText3
+501   83A9 CD 22 87         call PRINTAT
+502   83AC C1               pop bc
+503   83AD F1               pop af
+504   83AE C9               ret
+505   83AF
+506   83AF              Checklines:             ;checks if the lines are complete
+507   83AF E5               push hl
+508   83B0 C5               push bc
+509   83B1 F5               push af
+510   83B2 06 16            ld b, 22
+511   83B4 0E 02            ld c, 2
+512   83B6              loopChecklines:
+513   83B6 CD 92 85         call isBlack
+514   83B9 FE 00            cp 0
+515   83BB CA C7 83         jp z, noline        ;if just one its black goes to next line
+516   83BE 0C               inc c
+517   83BF 79               ld a, c
+518   83C0 FE 12            cp 18
+519   83C2 CA D9 83         jp z, isline        ;if all are color deletes the line
+520   83C5 18 EF            jr loopChecklines
+521   83C7              noline:                 ;if 1 is black first checks if theres more lines to check
+522   83C7 0E 02            ld c, 2
+523   83C9 05               dec b
+524   83CA 78               ld a, b
+525   83CB FE 02            cp 2
+526   83CD CA FA 83         jp z, endCheckLine
+527   83D0 18 E4            jr loopChecklines   ;goes to next line
+528   83D2              newline:
+529   83D2 05               dec b
+530   83D3 78               ld a, b
+531   83D4 FE 02            cp 2
+532   83D6 CA FA 83         jp z, endCheckLine
+533   83D9              isline:                 ;
+534   83D9 3E 07            ld a, 7
+535   83DB D3 FE            out ($fe), a
+536   83DD 3E 00            ld a, 0
+537   83DF 0E 02            ld c, 2
+538   83E1 16 0F            ld d, 15
+539   83E3 CD BE 85         call line ;pintamos la linea de negro
+540   83E6 0E 02            ld c, 2
+541   83E8
+542   83E8              moveLines:          ; chakes the color of the pixel and goes 1 down to paste the same color, moving all down 1 line
+543   83E8 05               dec b
+544   83E9 CD 92 85         call isBlack
+545   83EC 04               inc b
+546   83ED CD FE 83         call posMem
+547   83F0 77               ld (hl), a
+548   83F1 0C               inc c
+549   83F2 79               ld a, c
+550   83F3 FE 12            cp 18
+551   83F5 CA D2 83         jp z, newline
+552   83F8 18 EE            jr moveLines
+553   83FA
+554   83FA              endCheckLine:
+555   83FA F1               pop af
+556   83FB C1               pop bc
+557   83FC E1               pop hl
+558   83FD C9               ret
+559   83FE
+560   83FE              posMem:                     ;gives the memory position of the pixel
+561   83FE                  ; HL=$5800 + 32*Y + X
+562   83FE                  ; y (0-23) , x (0-31),
+563   83FE                  ; y = b, x = c,
+564   83FE F5               push af
+565   83FF D5               push de
+566   8400 C5               push bc
+567   8401                  ;   First part : 32*Y
+568   8401 26 00            ld h, 0
+569   8403 68               ld l, b
+570   8404 29               add hl, hl  ; 2^5
+571   8405 29               add hl, hl
+572   8406 29               add hl, hl
+573   8407 29               add hl, hl
+574   8408 29               add hl, hl
+575   8409                  ;   Second part: 32*Y + X
+576   8409 16 00            ld d, 0
+577   840B 59               ld e, c
+578   840C 19               add hl, de
+579   840D                  ;   Third part: $5800 + 32*Y + X
+580   840D 11 00 58         ld de, $5800
+581   8410 19               add hl, de
+582   8411 C1               pop bc
+583   8412 D1               pop de
+584   8413 F1               pop af
+585   8414 C9               ret
+586   8415
+587   8415
+588   8415              Undu:               ;loads the gamepositions before the move
+589   8415 DD E5            push ix
+590   8417 DD 21 07 80      ld ix, GameX
+591   841B DD 4E 00         ld c, (ix)
+592   841E DD 21 08 80      ld ix, GameY
+593   8422 DD 46 00         ld b, (ix)
+594   8425 DD 21 09 80      ld ix,TetroPtr
+595   8429 DD 6E 00 DD      ld hl, (ix)
+595   842D 66 01
+596   842F DD E1            pop ix
+597   8431 F5               push af
+598   8432 3E 02            ld a, 2
+599   8434 D3 FE            out ($fe), a
+600   8436 F1               pop af
+601   8437 C3 8F 81         jp isS
+602   843A C3 32 82         jp saveKey
+603   843D
+604   843D              DrawTetromino:          ;prints the tetromino
+605   843D C5               push bc
+606   843E DD E5            push ix
+607   8440 E5               push hl
+608   8441 F5               push af
+609   8442 D5               push de
+610   8443 C5               push bc
+611   8444 7E               ld a, (hl) ; a = color
+612   8445 23               inc hl
+613   8446 5E               ld e, (hl) ; e = yfigura
+614   8447 23               inc hl
+615   8448 56               ld d, (hl) ; d = xfigura
+616   8449 DD 21 06 80      ld ix, aux ; we save the value to restart it before
+617   844D DD 72 00         ld (ix), d
+618   8450 01 07 00         ld bc, ZB0Data - ZB0
+619   8453 2B               dec hl
+620   8454 2B               dec hl
+621   8455 09               add hl, bc ; first position tetrominoData
+622   8456 C1               pop bc
+623   8457
+624   8457              VectorXData:
+625   8457 F5               push af
+626   8458 7A               ld a, d  ; a = xfigura
+627   8459 FE 00            cp 0
+628   845B CA 75 84         jp z, finfila ; if x = 0 ends vector
+629   845E 7E               ld a, (hl)
+630   845F FE 00            cp 0
+631   8461 C2 6B 84         jp nz, draw             ;if was color in the array means it needs to be printed
+632   8464 15               dec d ; xfigura--
+633   8465 0C               inc c ; x in pantalla++
+634   8466 F1               pop af
+635   8467 23               inc hl
+636   8468 C3 57 84         jp VectorXData
+637   846B
+638   846B              draw:
+639   846B F1               pop af
+640   846C CD E7 84         call DOTYXC             ;prints the color
+641   846F 15               dec d
+642   8470 0C               inc c
+643   8471 23               inc hl
+644   8472 C3 57 84         jp VectorXData
+645   8475
+646   8475              finfila:
+647   8475 7B               ld a, e ; a = yfigura
+648   8476 FE 01            cp 1
+649   8478 CA 89 84         jp z, endtetromino  ; if theres no more lines se termina el tetromino
+650   847B 79               ld a, c
+651   847C DD 96 00         sub (ix)
+652   847F 4F               ld c, a
+653   8480 DD 56 00         ld d, (ix) ; restart x
+654   8483 1D               dec e  ;
+655   8484 04               inc b  ; next position in screen
+656   8485 F1               pop af
+657   8486 C3 57 84         jp VectorXData
+658   8489
+659   8489              endtetromino:
+660   8489 F1               pop af
+661   848A D1               pop de
+662   848B F1               pop af
+663   848C E1               pop hl
+664   848D DD E1            pop ix
+665   848F C1               pop bc
+666   8490 C9               ret
+667   8491
+668   8491              ;////////////////////////////////////////////////
+669   8491
+670   8491              DeleteTetromino:        ;same as draw but paints in black
+671   8491 C5               push bc
+672   8492 DD E5            push ix
+673   8494 E5               push hl
+674   8495 F5               push af
+675   8496 D5               push de
+676   8497 C5               push bc
+677   8498 7E               ld a, (hl)
+678   8499 23               inc hl
+679   849A 5E               ld e, (hl)
+680   849B 23               inc hl
+681   849C 56               ld d, (hl)
+682   849D DD 21 06 80      ld ix, aux
+683   84A1 DD 72 00         ld (ix), d
+684   84A4 01 07 00         ld bc, ZB0Data - ZB0
+685   84A7 2B               dec hl
+686   84A8 2B               dec hl
+687   84A9 09               add hl, bc
+688   84AA C1               pop bc
+689   84AB
+690   84AB
+691   84AB              VectorXData2:
+692   84AB F5               push af
+693   84AC 7A               ld a, d
+694   84AD FE 00            cp 0
+695   84AF CA CB 84         jp z, finfila2
+696   84B2 7E               ld a, (hl)
+697   84B3 FE 00            cp 0
+698   84B5 C2 BF 84         jp nz, draw2
+699   84B8 15               dec d
+700   84B9 0C               inc c
+701   84BA F1               pop af
+702   84BB 23               inc hl
+703   84BC C3 AB 84         jp VectorXData2
+704   84BF
+705   84BF              draw2:
+706   84BF F1               pop af
+707   84C0 3E 00            ld a, 0
+708   84C2 CD E7 84         call DOTYXC
+709   84C5 15               dec d
+710   84C6 0C               inc c
+711   84C7 23               inc hl
+712   84C8 C3 AB 84         jp VectorXData2
+713   84CB
+714   84CB              finfila2:
+715   84CB 7B               ld a, e ; a = yfigura
+716   84CC FE 01            cp 1
+717   84CE CA DF 84         jp z, endtetromino2  ; si no hay mÃ¡s filas se termina el tetromino
+718   84D1 79               ld a, c
+719   84D2 DD 96 00         sub (ix)
+720   84D5 4F               ld c, a
+721   84D6 DD 56 00         ld d, (ix) ; reiniciamos el valor de x
+722   84D9 1D               dec e  ; decrementamos la yfigura
+723   84DA 04               inc b  ; incrementamos la sig pos en pantalla
+724   84DB F1               pop af
+725   84DC C3 AB 84         jp VectorXData2
+726   84DF
+727   84DF              endtetromino2:
+728   84DF F1               pop af
+729   84E0 D1               pop de
+730   84E1 F1               pop af
+731   84E2 E1               pop hl
+732   84E3 DD E1            pop ix
+733   84E5 C1               pop bc
+734   84E6 C9               ret
+735   84E7              ;//////////////
+736   84E7
+737   84E7              DOTYXC:             ; draw a pixel in the screen depending on the parameters introduced
+738   84E7                  ; HL=$5800 + 32*Y + X
+739   84E7                  ; y (0-23) , x (0-31), color (0-15)
+740   84E7                  ; y = b, x = c, color = a
+741   84E7 F5               push af
+742   84E8 D5               push de
+743   84E9 C5               push bc
+744   84EA E5               push hl
+745   84EB                  ;   First part : 32*Y
+746   84EB 26 00            ld h, 0
+747   84ED 68               ld l, b
+748   84EE 29               add hl, hl  ; 2^5
+749   84EF 29               add hl, hl
+750   84F0 29               add hl, hl
+751   84F1 29               add hl, hl
+752   84F2 29               add hl, hl
+753   84F3                  ;   Second part: 32*Y + X
+754   84F3 16 00            ld d, 0
+755   84F5 59               ld e, c
+756   84F6 19               add hl, de
+757   84F7                  ;   Third part: $5800 + 32*Y + X
+758   84F7 11 00 58         ld de, $5800
+759   84FA 19               add hl, de
+760   84FB                  ;   Forth part: Moves the color to the correct attribute positions
+761   84FB                  ;   A=A*8
+762   84FB 58               ld e, b
+763   84FC 06 03            ld b, 3  ; although 2^3 = 8, b only worked with 2
+764   84FE              colorx3:
+765   84FE 87               add a
+766   84FF 10 FD            djnz colorx3
+767   8501 43               ld b,e
+768   8502 77               ld (hl), a ; we paint the position of hl
+769   8503 E1               pop hl
+770   8504 C1               pop bc
+771   8505 D1               pop de
+772   8506 F1               pop af
+773   8507 C9               ret
+774   8508
+775   8508              DOTYXCHD:             ; draw a pixel in the screen depending on the parameters introduced
+776   8508                  ; HL=$5800 + 32*Y + X
+777   8508                  ; y (0-23) , x (0-31), color (0-15)
+778   8508                  ; y = b, x = c, color = a
+779   8508 F5               push af
+780   8509 D5               push de
+781   850A C5               push bc
+782   850B E5               push hl
+783   850C                  ;   First part : 32*Y
+784   850C 26 00            ld h, 0
+785   850E 68               ld l, b
+786   850F 29               add hl, hl  ; 2^5
+787   8510 29               add hl, hl
+788   8511 29               add hl, hl
+789   8512 29               add hl, hl
+790   8513 29               add hl, hl
+791   8514                  ;   Second part: 32*Y + X
+792   8514 16 00            ld d, 0
+793   8516 59               ld e, c
+794   8517 19               add hl, de
+795   8518                  ;   Third part: $5800 + 32*Y + X
+796   8518 11 00 58         ld de, $5800
+797   851B 19               add hl, de
+798   851C 77               ld (hl), a ; we paint the position of hl
+799   851D E1               pop hl
+800   851E C1               pop bc
+801   851F D1               pop de
+802   8520 F1               pop af
+803   8521 C9               ret
+804   8522
+805   8522              savePos:            ;saves the actual values of the tetromino
+806   8522 DD E5            push ix
+807   8524 DD 21 07 80      ld ix, GameX
+808   8528 DD 71 00         ld (ix), c
+809   852B DD 21 08 80      ld ix, GameY
+810   852F DD 70 00         ld (ix), b
+811   8532 DD 21 09 80      ld ix,TetroPtr
+812   8536 DD 75 00 DD      ld (ix), hl
+812   853A 74 01
+813   853C DD E1            pop ix
+814   853E C9               ret
+815   853F
+816   853F              hasCollision:       ;checks colisions with the screen
+817   853F C5               push bc
+818   8540 DD E5            push ix
+819   8542 E5               push hl
+820   8543 D5               push de
+821   8544 C5               push bc
+822   8545 23               inc hl
+823   8546 5E               ld e, (hl)
+824   8547 23               inc hl
+825   8548 56               ld d, (hl)
+826   8549 DD 21 06 80      ld ix, aux
+827   854D DD 72 00         ld (ix), d
+828   8550 01 07 00         ld bc, ZB0Data - ZB0
+829   8553 2B               dec hl
+830   8554 2B               dec hl
+831   8555 09               add hl, bc
+832   8556 C1               pop bc
+833   8557
+834   8557              VectorXDataColi:        ;same structure as the drawtetromino
+835   8557 7A               ld a, d
+836   8558 FE 00            cp 0
+837   855A CA 77 85         jp z, finfilaColi
+838   855D 7E               ld a, (hl)
+839   855E FE 00            cp 0
+840   8560 C2 69 85         jp nz, drawColi     ;if the position of the array has a one checks the screen
+841   8563 15               dec d
+842   8564 0C               inc c
+843   8565 23               inc hl
+844   8566 C3 57 85         jp VectorXDataColi
+845   8569
+846   8569              drawColi:
+847   8569 CD 92 85         call isBlack        ;if theres a color in the pixel means it collides
+848   856C FE 00            cp 0
+849   856E C2 8C 85         jp nz, endColi
+850   8571 15               dec d
+851   8572 0C               inc c
+852   8573 23               inc hl
+853   8574 C3 57 85         jp VectorXDataColi
+854   8577
+855   8577              finfilaColi:
+856   8577 7B               ld a, e
+857   8578 FE 01            cp 1
+858   857A CA 8A 85         jp z, endtetrominoColi
+859   857D 79               ld a, c
+860   857E DD 96 00         sub (ix)
+861   8581 4F               ld c, a
+862   8582 DD 56 00         ld d, (ix)
+863   8585 1D               dec e
+864   8586 04               inc b
+865   8587 C3 57 85         jp VectorXDataColi
+866   858A
+867   858A              endtetrominoColi:
+868   858A 3E 00            ld a, 0
+869   858C              endColi:
+870   858C D1               pop de
+871   858D E1               pop hl
+872   858E DD E1            pop ix
+873   8590 C1               pop bc
+874   8591 C9               ret
+875   8592
+876   8592              isBlack:                    ;returns
+877   8592                  ; HL=$5800 + 32*Y + X
+878   8592                  ; y (0-23) , x (0-31),
+879   8592                  ; y = b, x = c,
+880   8592 E5               push hl
+881   8593 F5               push af
+882   8594 D5               push de
+883   8595 C5               push bc
+884   8596                  ;   First part : 32*Y
+885   8596 26 00            ld h, 0
+886   8598 68               ld l, b
+887   8599 29               add hl, hl  ; 2^5
+888   859A 29               add hl, hl
+889   859B 29               add hl, hl
+890   859C 29               add hl, hl
+891   859D 29               add hl, hl
+892   859E                  ;   Second part: 32*Y + X
+893   859E 16 00            ld d, 0
+894   85A0 59               ld e, c
+895   85A1 19               add hl, de
+896   85A2                  ;   Third part: $5800 + 32*Y + X
+897   85A2 11 00 58         ld de, $5800
+898   85A5 19               add hl, de
+899   85A6 C1               pop bc
+900   85A7 D1               pop de
+901   85A8 F1               pop af
+902   85A9 7E               ld a, (hl) ; save color
+903   85AA E1               pop hl
+904   85AB C9               ret
+905   85AC
+906   85AC              lineHD:
+907   85AC CD 08 85         call DOTYXCHD
+908   85AF F5               push af             ; to use the register a without any changing
+909   85B0 7A               ld a, d
+910   85B1 FE 00            cp 0                ; compares the value of a (d) with 0
+911   85B3 CA BC 85         jp z, endlineHD       ; if they are the same z is activated
+912   85B6 0C               inc c               ; x is increased
+913   85B7 15               dec d               ; d is decreased
+914   85B8 F1               pop af
+915   85B9 C3 AC 85         jp lineHD
+916   85BC              endlineHD:
+917   85BC F1               pop af
+918   85BD C9               ret
+919   85BE
+920   85BE              line:
+921   85BE CD E7 84         call DOTYXC
+922   85C1 F5               push af             ; to use the register a without any changing
+923   85C2 7A               ld a, d
+924   85C3 FE 00            cp 0                ; compares the value of a (d) with 0
+925   85C5 CA CE 85         jp z, endline       ; if they are the same z is activated
+926   85C8 0C               inc c               ; x is increased
+927   85C9 15               dec d               ; d is decreased
+928   85CA F1               pop af
+929   85CB C3 BE 85         jp line
+930   85CE              endline:
+931   85CE F1               pop af
+932   85CF C9               ret
+933   85D0 18 FE        endofcode: jr endofcode
+934   85D2                  include 'tetromino_blocks.asm'
+# file opened: A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm
+  1+  85D2              ; -----------------------------------------
+  2+  85D2              ; Tetris Block Definitions (JMS, DL 2023)
+  3+  85D2              ; Using doubly-linked circular list
+  4+  85D2              ; Simplified representation
+  5+  85D2              ; -----------------------------------------
+  6+  85D2
+  7+  85D2              NumBlocks      EQU 7               ; Different Tetrominos
+  8+  85D2              offsetColor    EQU 0               ; offset from Block start to Color
+  9+  85D2              offsetBY       EQU 1               ; offset from Block start to Y size of block
+ 10+  85D2              offsetBX       EQU 2               ; offset from Block start to X size of block
+ 11+  85D2              ptrOffsetRL    EQU 3               ; offset from Block start to Rotate Left pointer
+ 12+  85D2              ptrOffsetRR    EQU 5               ; offset from Block start to Rotate Right pointer
+ 13+  85D2              offsetData     EQU 7               ; offset from Block start to Block Data
+ 14+  85D2              BlockXSize     EQU 4               ; Max X size
+ 15+  85D2              BlockYSize     EQU 4               ; Max Y Size
+ 16+  85D2
+ 17+  85D2 E0 85 EB 85  TETRISBLOCKS: DW OB0, IB0, ZB0, SB0, LB0, JB0, TB0     ; all blocks
+ 17+  85D6 01 86 1B 86
+ 17+  85DA 35 86 69 86
+ 17+  85DE 9D 86
+ 18+  85E0
+ 19+  85E0              ; O block   All four rotations are the same
+ 20+  85E0              OC:       EQU 6                    ; dark YELLOW
+ 21+  85E0 06 02 02     OB0:      DB OC, 2, 2              ; Color, Ysize, Xsize
+ 22+  85E3 E0 85 E0 85  OB0Ptr:   DW OB0, OB0              ; Pointer to left rotation, pointer to right rotation
+ 23+  85E7 01 01        OB0Data:  DB 1, 1
+ 24+  85E9 01 01                  DB 1, 1
+ 25+  85EB
+ 26+  85EB
+ 27+  85EB              ; I block   Vertical and horizontal rotations are the same among them
+ 28+  85EB              IC:       EQU 13                   ; bright CYAN
+ 29+  85EB 0D 01 04     IB0:      DB IC, 1, 4              ; Color, Ysize, Xsize
+ 30+  85EE F6 85 F6 85  IB0Ptr:   DW IB1, IB1              ; Pointer to left rotation, pointer to right rotation
+ 31+  85F2 01 01 01 01  IB0Data:  DB 1,1,1,1
+ 32+  85F6
+ 33+  85F6 0D 04 01     IB1:      DB IC, 4, 1              ; Color, Ysize, Xsize
+ 34+  85F9 EB 85 EB 85  IB1Ptr:   DW IB0, IB0              ; Pointer to left rotation, pointer to right rotation
+ 35+  85FD 01           IB1Data:  DB 1
+ 36+  85FE 01                     DB 1
+ 37+  85FF 01                     DB 1
+ 38+  8600 01                     DB 1
+ 39+  8601
+ 40+  8601
+ 41+  8601              ; Z block  Vertical and horizontal rotations are the same among them
+ 42+  8601              ZC:       EQU 10                   ; bright RED
+ 43+  8601 0A 02 03     ZB0:      DB ZC, 2, 3              ; Color, Ysize, Xsize
+ 44+  8604 0E 86 0E 86  ZB0Ptr:   DW ZB1, ZB1              ; Pointer to left rotation, pointer to right rotation
+ 45+  8608 01 01 00     ZB0Data:  DB 1,1,0
+ 46+  860B 00 01 01               DB 0,1,1
+ 47+  860E
+ 48+  860E 0A 03 02     ZB1:      DB ZC, 3, 2              ; Color, Ysize, Xsize
+ 49+  8611 01 86 01 86  ZB1Ptr:   DW ZB0, ZB0              ; Pointer to left rotation, pointer to right rotation
+ 50+  8615 00 01        ZB1Data:  DB 0,1
+ 51+  8617 01 01                  DB 1,1
+ 52+  8619 01 00                  DB 1,0
+ 53+  861B
+ 54+  861B
+ 55+  861B              ; S block  Vertical and horizontal rotations are the same among them
+ 56+  861B              SC:       EQU 4                    ; dark GREEN
+ 57+  861B 04 02 03     SB0:      DB SC, 2, 3              ; Color, Ysize, Xsize
+ 58+  861E 28 86 28 86  SB0Ptr:   DW SB1, SB1              ; Pointer to left rotation, pointer to right rotation
+ 59+  8622 00 01 01     SB0Data:  DB 0,1,1
+ 60+  8625 01 01 00               DB 1,1,0
+ 61+  8628
+ 62+  8628 04 03 02     SB1:      DB SC, 3, 2              ; Color, Ysize, Xsize
+ 63+  862B 1B 86 1B 86  SB1Ptr:   DW SB0, SB0              ; Pointer to left rotation, pointer to right rotation
+ 64+  862F 01 00        SB1Data:  DB 1,0
+ 65+  8631 01 01                  DB 1,1
+ 66+  8633 00 01                  DB 0,1
+ 67+  8635
+ 68+  8635              ; L block   four rotations
+ 69+  8635              LC:       EQU 2                    ; dark RED
+ 70+  8635 02 02 03     LB0:      DB LC, 2, 3              ; Color, Ysize, Xsize
+ 71+  8638 5C 86 42 86  LB0Ptr:   DW LB3, LB1              ; Pointer to left rotation, pointer to right rotation
+ 72+  863C 00 00 01     LB0Data:  DB 0,0,1
+ 73+  863F 01 01 01               DB 1,1,1
+ 74+  8642
+ 75+  8642 02 03 02     LB1:      DB LC, 3, 2              ; Color, Ysize, Xsize
+ 76+  8645 35 86 4F 86  LB1Ptr:   DW LB0, LB2              ; Pointer to left rotation, pointer to right rotation
+ 77+  8649 01 00        LB1Data:  DB 1,0
+ 78+  864B 01 00                  DB 1,0
+ 79+  864D 01 01                  DB 1,1
+ 80+  864F
+ 81+  864F 02 02 03     LB2:      DB LC, 2, 3              ; Color, Ysize, Xsize
+ 82+  8652 42 86 5C 86  LB2Ptr:   DW LB1, LB3              ; Pointer to left rotation, pointer to right rotation
+ 83+  8656 01 01 01     LB2Data:  DB 1,1,1
+ 84+  8659 01 00 00               DB 1,0,0
+ 85+  865C
+ 86+  865C 02 03 02     LB3:      DB LC, 3, 2              ; Color, Ysize, Xsize
+ 87+  865F 4F 86 35 86  LB3Ptr:   DW LB2, LB0              ; Pointer to left rotation, pointer to right rotation
+ 88+  8663 01 01        LB3Data:  DB 1,1
+ 89+  8665 00 01                  DB 0,1
+ 90+  8667 00 01                  DB 0,1
+ 91+  8669
+ 92+  8669              ; J block   four rotations
+ 93+  8669              JC:       EQU 7                    ; bright BLUE
+ 94+  8669 07 02 03     JB0:      DB JC, 2, 3              ; Color, Ysize, Xsize
+ 95+  866C 90 86 76 86  JB0Ptr:   DW JB3, JB1              ; Pointer to left rotation, pointer to right rotation
+ 96+  8670 01 00 00     JB0Data:  DB 1,0,0
+ 97+  8673 01 01 01               DB 1,1,1
+ 98+  8676
+ 99+  8676 07 03 02     JB1:      DB JC, 3, 2              ; Color, Ysize, Xsize
+100+  8679 69 86 83 86  JB1Ptr:   DW JB0, JB2              ; Pointer to left rotation, pointer to right rotation
+101+  867D 01 01        JB1Data:  DB 1,1
+102+  867F 01 00                  DB 1,0
+103+  8681 01 00                  DB 1,0
+104+  8683
+105+  8683 07 02 03     JB2:      DB JC, 2, 3              ; Color, Ysize, Xsize
+106+  8686 76 86 90 86  JB2Ptr:   DW JB1, JB3              ; Pointer to left rotation, pointer to right rotation
+107+  868A 01 01 01     JB2Data:  DB 1,1,1
+108+  868D 00 00 01               DB 0,0,1
+109+  8690
+110+  8690 07 03 02     JB3:      DB JC, 3, 2              ; Color, Ysize, Xsize
+111+  8693 83 86 69 86  JB3Ptr:   DW JB2, JB0              ; Pointer to left rotation, pointer to right rotation
+112+  8697 00 01        JB3Data:  DB 0,1
+113+  8699 00 01                  DB 0,1
+114+  869B 01 01                  DB 1,1
+115+  869D
+116+  869D              ; T block   four rotations
+117+  869D              TC:       EQU 3                    ; dark MAGENTA
+118+  869D 03 02 03     TB0:      DB TC, 2, 3              ; Color, Ysize, Xsize
+119+  86A0 C4 86 AA 86  TB0Ptr:   DW TB3, TB1              ; Pointer to left rotation, pointer to right rotation
+120+  86A4 00 01 00     TB0Data:  DB 0,1,0
+121+  86A7 01 01 01               DB 1,1,1
+122+  86AA
+123+  86AA 03 03 02     TB1:      DB TC, 3, 2              ; Color, Ysize, Xsize
+124+  86AD 9D 86 B7 86  TB1Ptr:   DW TB0, TB2              ; Pointer to left rotation, pointer to right rotation
+125+  86B1 01 00        TB1Data:  DB 1,0
+126+  86B3 01 01                  DB 1,1
+127+  86B5 01 00                  DB 1,0
+128+  86B7
+129+  86B7 03 02 03     TB2:      DB TC, 2, 3              ; Color, Ysize, Xsize
+130+  86BA AA 86 C4 86  TB2Ptr:   DW TB1, TB3              ; Pointer to left rotation, pointer to right rotation
+131+  86BE 01 01 01     TB2Data:  DB 1,1,1
+132+  86C1 00 01 00               DB 0,1,0
+133+  86C4
+134+  86C4 03 03 02     TB3:      DB TC, 3, 2              ; Color, Ysize, Xsize
+135+  86C7 B7 86 9D 86  TB3Ptr:   DW TB2, TB0              ; Pointer to left rotation, pointer to right rotation
+136+  86CB 00 01        TB3Data:  DB 0,1
+137+  86CD 01 01                  DB 1,1
+138+  86CF 00 01                  DB 0,1
+139+  86D1
+# file closed: A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\tetromino_blocks.asm
+935   86D1                  include 'highResBackground.asm'
+# file opened: A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm
+  1+  86D1              ;--------------------------------------------------------------------------------------------
+  2+  86D1              ; Function hrBKG -  fills the full screen with a char pattern (blockgraph)
+  3+  86D1              ;--------------------------------------------------------------------------------------------
+  4+  86D1 F5           hrBKG:			push af
+  5+  86D2 C5                           push bc
+  6+  86D3 D5                           push de
+  7+  86D4 E5                           push hl
+  8+  86D5 DD E5                        push ix
+  9+  86D7
+ 10+  86D7 21 00 40     				ld hl, $4000
+ 11+  86DA 16 00        				ld d, 0
+ 12+  86DC 01 00 18     				ld BC, $1800
+ 13+  86DF DD 21 FA 86  hrLp:			ld ix, blockgraph
+ 14+  86E3 7C                           ld a, h
+ 15+  86E4 E6 07                        and 7
+ 16+  86E6 5F                           ld e, a
+ 17+  86E7 DD 19        				add ix, de
+ 18+  86E9 DD 7E 00     				ld a, (ix)
+ 19+  86EC 77           				ld (hl),a
+ 20+  86ED 23                           inc hl
+ 21+  86EE 0B                           dec bc
+ 22+  86EF 78                           ld a, b
+ 23+  86F0 B1                           or c
+ 24+  86F1 20 EC                        jr nz, hrLp
+ 25+  86F3
+ 26+  86F3 DD E1                        pop ix
+ 27+  86F5 E1                           pop hl
+ 28+  86F6 D1                           pop de
+ 29+  86F7 C1                           pop bc
+ 30+  86F8 F1                           pop af
+ 31+  86F9 C9                           ret
+ 32+  86FA
+ 33+  86FA FF 81 81 85  blockgraph:	DEFB $FF, $81, $81, $85, $85, $9D, $81, $FF
+ 33+  86FE 85 9D 81 FF
+# file closed: A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\highResBackground.asm
+936   8702                  include 'TextDemo.asm'
+# file opened: A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm
+  1+  8702
+  2+  8702              printtext:
+  3+  8702                              ; FIRST EXAMPLE - Print a text
+  4+  8702                              ;--------------------------------------------------
+  5+  8702 06 0A                        ld b, 10        ; Row in register B
+  6+  8704 0E 00                        ld c, 0         ; Column in register C
+  7+  8706                              ;ld a, %01001101 ; Color in register A (Full 8-bit attributes: Flash, Brightness, Paper(3), Ink (3))
+  8+  8706                                ; Text, ending with 0, pointed to by IX
+  9+  8706 CD 22 87                     call PRINTAT    ; Function to print text
+ 10+  8709
+ 11+  8709                              ; SECOND EXAMPLE - Print a row of a character
+ 12+  8709                              ;--------------------------------------------------
+ 13+  8709 06 0C                        ld b, 12        ; Row in register B
+ 14+  870B 0E 00                        ld c, 0         ; Initial column in register C
+ 15+  870D 3E 10                        ld a, %00010000 ; Color in register A (Full 8-bit attributes: Flash, Brightness, Paper(3), Ink (3))
+ 16+  870F CD 31 87                     call PREP_PRT   ; Initialize text variables
+ 17+  8712 06 20                        ld b, 32        ; Prepare a loop of 32 iterations
+ 18+  8714 3E 80                        ld a, 128       ; Define the character to print. 128 is "brick", the first one right after the "text.asm" include
+ 19+  8716
+ 20+  8716 F5           PrintRow:       push af         ; Print char routine does not push/pop register, so we save them here
+ 21+  8717 C5                           push bc
+ 22+  8718 CD 72 87                     call PRINTCHNUM ; Print a char and update cursor variables, moving it one to the right
+ 23+  871B C1                           pop bc          ; Restore register B (loop) and register C, although C is not used here
+ 24+  871C F1                           pop af          ; Restore A, containing the char to print
+ 25+  871D 10 F7                        djnz PrintRow   ; For loop
+ 26+  871F C9                           ret
+ 27+  8720
+ 28+  8720 18 FE        end:            jr end          ; end of program infinite loop
+ 29+  8722
+ 30+  8722                  include "text.asm"         ; Library for text printing
+# file opened: A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm
+  1++ 8722              ; -------------------------------
+  2++ 8722              ; ZX Spectrum Text print library
+  3++ 8722              ; Daniel León - AOC - UFV 2020
+  4++ 8722              ; -------------------------------
+  5++ 8722
+  6++ 8722
+  7++ 8722              ; ----------------------------------------------------------------------------------------
+  8++ 8722              ; PRINTAT - Print a string in a position and attributes as per registers:
+  9++ 8722              ;		IN	A	: Bit 7=1 For Flash / Bit 6=1 For Brigh / Bit 5,4,3 for Paper / Bit 2,1,0 for Ink
+ 10++ 8722              ;		IN	B	: Row 0..23
+ 11++ 8722              ;		IN	C	: Column 0..31
+ 12++ 8722              ;		IN	IX	: Address of text (Text must end in a 0)
+ 13++ 8722              ; ----------------------------------------------------------------------------------------
+ 14++ 8722 CD 31 87     PRINTAT:	CALL PREP_PRT				; Update Attribute var &Screen & Attributes pointers
+ 15++ 8725              ; ----------------------------------------------------------------------------------------
+ 16++ 8725              ;		VVV Do not move PRINTSTR below as PRINTAT continues into PRINTSTR routine
+ 17++ 8725              ; ----------------------------------------------------------------------------------------
+ 18++ 8725              ; PRINTSTR - Prints String - IX Points to the String start
+ 19++ 8725              ; ----------------------------------------------------------------------------------------
+ 20++ 8725 DD 7E 00     PRINTSTR:   LD A,(IX)					; A Contains first char to print
+ 21++ 8728 B7           			OR A						; check for end of string (0)
+ 22++ 8729 C8           			RET Z						; Finish printing if 0
+ 23++ 872A CD 72 87     			CALL PRINTCHNUM
+ 24++ 872D DD 23        			INC IX						; Move to next char in string
+ 25++ 872F 18 F4        			JR PRINTSTR					; Start over printing sequence
+ 26++ 8731              ; ----------------------------------------------------------------------------------------
+ 27++ 8731
+ 28++ 8731
+ 29++ 8731              ;-----------------------------------------------------------------------------------------
+ 30++ 8731              ; PREP_PRT - Updates Print_Attr, SCR & ATTR Vars
+ 31++ 8731              ;-----------------------------------------------------------------------------------------
+ 32++ 8731 32 B8 87     PREP_PRT:	LD (PRINT_ATTR),A			; Set Attribute
+ 33++ 8734 CD 3A 87     PREP_PRT_2:	CALL CRtoSCREEN
+ 34++ 8737 C3 4C 87     			JP CRtoATTR
+ 35++ 873A              ;-----------------------------------------------------------------------------------------
+ 36++ 873A
+ 37++ 873A              ;-----------------------------------------------------------------------------------------
+ 38++ 873A              ; CRtoSCREEN - Converts a scr char coord into a SCREEN Address   b,c = y,x positions
+ 39++ 873A              ;	IN  - B=Row, C=Column
+ 40++ 873A              ;	OUT - HL=Address in screen also stored in (SCR_CUR_PTR)
+ 41++ 873A              ;	Conversion:
+ 42++ 873A              ;			Row FFfff   Column CCCCC
+ 43++ 873A              ;			HL=%010FF000 fffCCCCC
+ 44++ 873A              ;-----------------------------------------------------------------------------------------
+ 45++ 873A              CRtoSCREEN:
+ 46++ 873A 78           			LD A,B						; %___FFfff
+ 47++ 873B F6 40        			OR #40						; %010FFfff
+ 48++ 873D E6 F8        			AND #F8						; %010FF000
+ 49++ 873F 67           			LD H,A
+ 50++ 8740
+ 51++ 8740 78           			LD A,B						; %___FFfff
+ 52++ 8741 E6 07        			AND #7						; %00000fff
+ 53++ 8743 0F           			RRCA						; %f00000ff
+ 54++ 8744 0F           			RRCA						; %ff00000f
+ 55++ 8745 0F           			RRCA						; %fff00000
+ 56++ 8746 B1           			OR C						; %fffCCCCC
+ 57++ 8747 6F           			LD L,A
+ 58++ 8748 22 B4 87                 LD (SCR_CUR_PTR),HL			; Update Variable
+ 59++ 874B C9                       RET
+ 60++ 874C              ; ----------------------------------------------------------------------------------------
+ 61++ 874C
+ 62++ 874C
+ 63++ 874C
+ 64++ 874C              ;-----------------------------------------------------------------------------------------
+ 65++ 874C              ; CRtoATTR - Converts a screen char coord  into a ATTR Address  b,c = y,x positions
+ 66++ 874C              ;	IN  - B=Row, C=Column
+ 67++ 874C              ;	OUT - HL=Address in screen also stored in (SCR_ATTR_PTR)
+ 68++ 874C              ;	Conversion:
+ 69++ 874C              ;			Row FFfff   Column CCCCC
+ 70++ 874C              ;			HL=%010110FF fffCCCCC
+ 71++ 874C              ;-----------------------------------------------------------------------------------------
+ 72++ 874C              CRtoATTR:
+ 73++ 874C 78           			LD A,B						; %___FFfff
+ 74++ 874D 0F           			RRCA						; %f000FFff
+ 75++ 874E 0F           			RRCA						; %ff000FFf
+ 76++ 874F 0F           			RRCA						; %fff000FF
+ 77++ 8750 6F           			LD L,A
+ 78++ 8751 E6 03        			AND 3						; %000000FF	value of FF can be only 00,01,10
+ 79++ 8753 F6 58        			OR #58						; %010110FF value will be #58, #59 or #5A
+ 80++ 8755 67           			LD H,A
+ 81++ 8756
+ 82++ 8756 7D           			LD A,L						; %fff000FF
+ 83++ 8757 E6 E0        			AND #E0						; %fff00000
+ 84++ 8759 B1           			OR C						; %fffCCCCC
+ 85++ 875A 6F           			LD L,A
+ 86++ 875B
+ 87++ 875B 22 B6 87                 LD (SCR_ATTR_PTR),HL		; Update Variable
+ 88++ 875E C9                       RET
+ 89++ 875F              ; ----------------------------------------------------------------------------------------
+ 90++ 875F
+ 91++ 875F              ; ----------------------------------------------------------------------------------------
+ 92++ 875F              ; PRINTCHNUMAT - Prints Char pointed by IX
+ 93++ 875F              ;-----------------------------------------------------------------------------------------
+ 94++ 875F              PRINTCHNUMAT:
+ 95++ 875F F5           			PUSH AF
+ 96++ 8760 C5           			PUSH BC
+ 97++ 8761 D5           			PUSH DE
+ 98++ 8762 E5           			PUSH HL
+ 99++ 8763 CD 31 87     			CALL PREP_PRT
+100++ 8766 DD 7E 00     			LD A, (IX)
+101++ 8769 CD 72 87     			CALL PRINTCHNUM
+102++ 876C E1           			POP HL
+103++ 876D D1           			POP DE
+104++ 876E C1           			POP BC
+105++ 876F 0C           			INC C
+106++ 8770 F1           			POP AF
+107++ 8771 C9           			RET
+108++ 8772
+109++ 8772              ; ----------------------------------------------------------------------------------------
+110++ 8772              ; PRINTCHNUM - Prints Char Number N (stored in A)
+111++ 8772              ;-----------------------------------------------------------------------------------------
+112++ 8772              PRINTCHNUM:
+113++ 8772 26 00        			LD H,0						; Multiply value by 8 to get to right Char in Charset
+114++ 8774 6F           			LD L,A
+115++ 8775 29           			ADD HL,HL
+116++ 8776 29           			ADD HL,HL
+117++ 8777 29           			ADD HL,HL
+118++ 8778 11 B9 86     			LD DE, CHARSET-(8*32)		; Optimize in compile time (instead of sub 32)
+119++ 877B 19           			ADD HL,DE
+120++ 877C EB           			EX  DE,HL					;Value in DE
+121++ 877D              			; Continues to printchar below
+122++ 877D              ; ----------------------------------------------------------------------------------------
+123++ 877D
+124++ 877D
+125++ 877D              ; ----------------------------------------------------------------------------------------
+126++ 877D              ; PRINTCHAR - Prints Char  (DE points to the char. Uses HL as last Cur Pointer)
+127++ 877D              ; ----------------------------------------------------------------------------------------
+128++ 877D              PRINTCHAR:
+129++ 877D 06 08        			LD B,8						; 8 Lines per char
+130++ 877F 2A B4 87                 LD HL, (SCR_CUR_PTR)		; Load Cursor Pointer y,x
+131++ 8782
+132++ 8782 1A           BYTEPCHAR:	LD A,(DE)					; Get Char to be printed, first line
+133++ 8783 77           			LD (HL),A					; Move to Printing location
+134++ 8784 24                       INC H						; inc H so next line in char (ZX Spectrum Screen RAM)
+135++ 8785 13                       INC DE 						; next line to be printed
+136++ 8786 10 FA                    DJNZ BYTEPCHAR				; Repeat 8 lines
+137++ 8788 3A B8 87                 LD A,(PRINT_ATTR) 			; Load Attributes to print char with
+138++ 878B 2A B6 87                 LD HL, (SCR_ATTR_PTR)
+139++ 878E 77                       LD (HL),A
+140++ 878F 21 B6 87                 LD HL, SCR_ATTR_PTR			; Get pointer to ATTR
+141++ 8792 34                       INC (HL)					; Move Attribute cursor to next char
+142++ 8793 21 B4 87     			LD HL, SCR_CUR_PTR
+143++ 8796 34           			INC (HL)					; update Cursor pointer to next position
+144++ 8797 C9                       RET
+145++ 8798              ; ----------------------------------------------------------------------------------------
+146++ 8798
+147++ 8798
+148++ 8798
+149++ 8798              ; ----------------------------------------------------------------------------------------
+150++ 8798              ; INK2PAPER - moves ink of attribute stored in (PRINT_ATTR) to paper and sets ink to 0
+151++ 8798              ; 				Sets bright 1 and flash 0
+152++ 8798              ; ----------------------------------------------------------------------------------------
+153++ 8798 3A B8 87     INK2PAPER:	LD A, (PRINT_ATTR)		    ; Get storedAttribute
+154++ 879B E6 07                    AND 7						; get Attr INK in A
+155++ 879D 07           			RLCA
+156++ 879E 07           			RLCA
+157++ 879F 07           			RLCA						; move Ink to Paper
+158++ 87A0 F6 40        			OR 64						; ink 0 bright 1
+159++ 87A2 32 B8 87     			LD (PRINT_ATTR),A		    ; Get storedAttribute
+160++ 87A5 C9           			RET
+161++ 87A6              ; ----------------------------------------------------------------------------------------
+162++ 87A6
+163++ 87A6
+164++ 87A6
+165++ 87A6
+166++ 87A6 21 00 40     CLEARSCR:	LD HL,$4000					; Erases screen by writing 0 to all pixels and attributes
+167++ 87A9 11 01 40     			LD DE,$4001
+168++ 87AC 01 FF 1A     			LD BC,6911
+169++ 87AF 36 00        			LD (HL),0
+170++ 87B1 ED B0        			LDIR
+171++ 87B3 C9           			RET
+172++ 87B4
+173++ 87B4
+174++ 87B4              SCR_CUR_PTR
+174++ 87B4 00 00          	db $00, $00				; Cursor Pointer in Screen (2 bytes) (HL)
+175++ 87B6 00 00        SCR_ATTR_PTR: 	db $00, $00				; Attr Pointer in Screen (2 bytes) (HL)
+176++ 87B8 00           PRINT_ATTR:		db $00					; Attribute used by printchar routine (1 byte)
+177++ 87B9
+178++ 87B9              CHARSET: incbin "charset.bin"			; Charset used
+179++ 8AB9
+# file closed: A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\text.asm
+ 31+  8AB9                                             ; Including the pixelwise definition for all characters (96 ASCII chars, from 32 (space) onwards)
+ 32+  8AB9                                             ; Right after this include, you may add custom chars as per the two shown below.
+ 33+  8AB9                                             ; Use the attached excel file to define these bytes easily
+ 34+  8AB9 FF 01 01 81  brick:          defb $FF, $01, $01, $81, $FF, $10, $10, $18; Brick pixel definition, defined as the next char: char 128
+ 34+  8ABD FF 10 10 18
+ 35+  8AC1 3C 42 A5 81  smiley:         defb $3C, $42, $A5, $81, $A5, $99, $42, $3C; Smiley pixel definition, defined as the next char: char 129
+ 35+  8AC5 A5 99 42 3C
+ 36+  8AC9 3C 42 A5 81  nosmiley:         defb $3C, $42, $A5, $81, $99,$A5, $42, $3C
+ 36+  8ACD 99 A5 42 3C
+ 37+  8AD1                              ; How to make a custom char: Shown, for readabilty sake, as a "." representing a 0, and a "@" representing a 1
+ 38+  8AD1                              ; Smiley Example
+ 39+  8AD1                              ; $3C --> 00111100  --> ..@@@@..
+ 40+  8AD1                              ; $42 --> 01000010  --> .@....@.
+ 41+  8AD1                              ; $A5 --> 10100101  --> @.@..@.@
+ 42+  8AD1                              ; $81 --> 10000001  --> @......@
+ 43+  8AD1                              ; $A5 --> 10100101  --> @.@..@.@
+ 44+  8AD1                              ; $99 --> 10011001  --> @..@@..@
+ 45+  8AD1                              ; $42 --> 01000010  --> .@....@.
+ 46+  8AD1                              ; $3C --> 00111100  --> ..@@@@..
+ 47+  8AD1
+ 48+  8AD1
+ 49+  8AD1 20 20 82 20  Endgametext:         defm "  ", 130, "        End game           ",130," ",0
+ 49+  8AD5 20 20 20 20
+ 49+  8AD9 20 20 20 45
+ 49+  8ADD 6E 64 20 67
+ 49+  8AE1 61 6D 65 20
+ 49+  8AE5 20 20 20 20
+ 49+  8AE9 20 20 20 20
+ 49+  8AED 20 20 82 20
+ 49+  8AF1 00
+ 50+  8AF2 20 20 81 20  Welcometext:         defm "  ", 129, " Welcome to TETRIS by: ",129,"      Rodrigo, Claudia and Cristina      ",0
+ 50+  8AF6 57 65 6C 63
+ 50+  8AFA 6F 6D 65 20
+ 50+  8AFE 74 6F 20 54
+ 50+  8B02 45 54 52 49
+ 50+  8B06 53 20 62 79
+ 50+  8B0A 3A 20 81 20
+ 50+  8B0E 20 20 20 20
+ 50+  8B12 20 52 6F 64
+ 50+  8B16 72 69 67 6F
+ 50+  8B1A 2C 20 43 6C
+ 50+  8B1E 61 75 64 69
+ 50+  8B22 61 20 61 6E
+ 50+  8B26 64 20 43 72
+ 50+  8B2A 69 73 74 69
+ 50+  8B2E 6E 61 20 20
+ 50+  8B32 20 20 20 20
+ 50+  8B36 00
+ 51+  8B37 54 65 74 72  Tetristext:         defm "Tetris",0
+ 51+  8B3B 69 73 00
+ 52+  8B3E 54 75 74 6F  TutorialText:           defm "Tutorial:",0
+ 52+  8B42 72 69 61 6C
+ 52+  8B46 3A 00
+ 53+  8B48 27 51 27 20  tutText:           defm "'Q'          ->rotate left      'E'          ->rotate right     'W''A''S''D' ->move             'Spacebar'   ->drop",0
+ 53+  8B4C 20 20 20 20
+ 53+  8B50 20 20 20 20
+ 53+  8B54 20 2D 3E 72
+ 53+  8B58 6F 74 61 74
+ 53+  8B5C 65 20 6C 65
+ 53+  8B60 66 74 20 20
+ 53+  8B64 20 20 20 20
+ 53+  8B68 27 45 27 20
+ 53+  8B6C 20 20 20 20
+ 53+  8B70 20 20 20 20
+ 53+  8B74 20 2D 3E 72
+ 53+  8B78 6F 74 61 74
+ 53+  8B7C 65 20 72 69
+ 53+  8B80 67 68 74 20
+ 53+  8B84 20 20 20 20
+ 53+  8B88 27 57 27 27
+ 53+  8B8C 41 27 27 53
+ 53+  8B90 27 27 44 27
+ 53+  8B94 20 2D 3E 6D
+ 53+  8B98 6F 76 65 20
+ 53+  8B9C 20 20 20 20
+ 53+  8BA0 20 20 20 20
+ 53+  8BA4 20 20 20 20
+ 53+  8BA8 27 53 70 61
+ 53+  8BAC 63 65 62 61
+ 53+  8BB0 72 27 20 20
+ 53+  8BB4 20 2D 3E 64
+ 53+  8BB8 72 6F 70 00
+ 54+  8BBC 50 72 65 73  pressText:              defm "Press spacebar to continue.  ",0
+ 54+  8BC0 73 20 73 70
+ 54+  8BC4 61 63 65 62
+ 54+  8BC8 61 72 20 74
+ 54+  8BCC 6F 20 63 6F
+ 54+  8BD0 6E 74 69 6E
+ 54+  8BD4 75 65 2E 20
+ 54+  8BD8 20 00
+ 55+  8BDA 50 72 65 73  pressText2:              defm "Press spacebar to continue.. ",0
+ 55+  8BDE 73 20 73 70
+ 55+  8BE2 61 63 65 62
+ 55+  8BE6 61 72 20 74
+ 55+  8BEA 6F 20 63 6F
+ 55+  8BEE 6E 74 69 6E
+ 55+  8BF2 75 65 2E 2E
+ 55+  8BF6 20 00
+ 56+  8BF8 50 72 65 73  pressText3:              defm "Press spacebar to continue...",0
+ 56+  8BFC 73 20 73 70
+ 56+  8C00 61 63 65 62
+ 56+  8C04 61 72 20 74
+ 56+  8C08 6F 20 63 6F
+ 56+  8C0C 6E 74 69 6E
+ 56+  8C10 75 65 2E 2E
+ 56+  8C14 2E 00
+ 57+  8C16 51 20 20 57  ingameTutText1:           defm "Q  W  E",0
+ 57+  8C1A 20 20 45 00
+ 58+  8C1E 41 20 20 53  ingameTutText2:           defm "A  S  D",0
+ 58+  8C22 20 20 44 00
+ 59+  8C26 53 70 61 63  ingameTutText3:           defm "Spacebar",0
+ 59+  8C2A 65 62 61 72
+ 59+  8C2E 00
+# file closed: A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\TextDemo.asm
+937   8C2F
+938   8C2F
+# file closed: A:\OneDrive\Documentos\UFV\Segundo curso\AOC\Tetris\Tetris.asm
+
+Value    Label
+------ - -----------------------------------------------------------
+0x8AC9 X nosmiley
+0x8AC1 X smiley
+0x8AB9 X brick
+0x8798 X INK2PAPER
+0x8782   BYTEPCHAR
+0x877D X PRINTCHAR
+0x87B9   CHARSET
+0x875F X PRINTCHNUMAT
+0x87B6   SCR_ATTR_PTR
+0x87B4   SCR_CUR_PTR
+0x874C   CRtoATTR
+0x873A   CRtoSCREEN
+0x8734 X PREP_PRT_2
+0x87B8   PRINT_ATTR
+0x8725   PRINTSTR
+0x8720   end
+0x8772   PRINTCHNUM
+0x8716   PrintRow
+0x8731   PREP_PRT
+0x86FA   blockgraph
+0x86DF   hrLp
+0x86CB X TB3Data
+0x86C7 X TB3Ptr
+0x86BE X TB2Data
+0x86BA X TB2Ptr
+0x86B1 X TB1Data
+0x86B7   TB2
+0x86AD X TB1Ptr
+0x86A4 X TB0Data
+0x86AA   TB1
+0x86C4   TB3
+0x86A0 X TB0Ptr
+0x0003   TC
+0x8697 X JB3Data
+0x8693 X JB3Ptr
+0x868A X JB2Data
+0x8686 X JB2Ptr
+0x867D X JB1Data
+0x8683   JB2
+0x8679 X JB1Ptr
+0x8670 X JB0Data
+0x8676   JB1
+0x8690   JB3
+0x866C X JB0Ptr
+0x0007   JC
+0x8663 X LB3Data
+0x865F X LB3Ptr
+0x8656 X LB2Data
+0x8652 X LB2Ptr
+0x8649 X LB1Data
+0x864F   LB2
+0x8645 X LB1Ptr
+0x863C X LB0Data
+0x8642   LB1
+0x865C   LB3
+0x8638 X LB0Ptr
+0x0002   LC
+0x862F X SB1Data
+0x862B X SB1Ptr
+0x8622 X SB0Data
+0x8628   SB1
+0x861E X SB0Ptr
+0x0004   SC
+0x8615 X ZB1Data
+0x8611 X ZB1Ptr
+0x860E   ZB1
+0x8604 X ZB0Ptr
+0x000A   ZC
+0x85FD X IB1Data
+0x85F9 X IB1Ptr
+0x85F2 X IB0Data
+0x85F6   IB1
+0x85EE X IB0Ptr
+0x000D   IC
+0x85E7 X OB0Data
+0x85E3 X OB0Ptr
+0x0006   OC
+0x85D2 X TETRISBLOCKS
+0x0004 X BlockYSize
+0x0004 X BlockXSize
+0x0007 X offsetData
+0x0002 X offsetBX
+0x0001 X offsetBY
+0x0000 X offsetColor
+0x0007 X NumBlocks
+0x85D0   endofcode
+0x85CE   endline
+0x85BC   endlineHD
+0x858A   endtetrominoColi
+0x858C   endColi
+0x8569   drawColi
+0x8557   VectorXDataColi
+0x8508   DOTYXCHD
+0x84FE   colorx3
+0x84DF   endtetromino2
+0x84BF   draw2
+0x84CB   finfila2
+0x8577   finfilaColi
+0x84AB   VectorXData2
+0x8489   endtetromino
+0x84E7   DOTYXC
+0x846B   draw
+0x8475   finfila
+0x8457   VectorXData
+0x8608   ZB0Data
+0x83FE   posMem
+0x83E8   moveLines
+0x83D2   newline
+0x83FA   endCheckLine
+0x83D9   isline
+0x83C7   noline
+0x8592   isBlack
+0x83B6   loopChecklines
+0x8C26   ingameTutText3
+0x8C1E   ingameTutText2
+0x8C16   ingameTutText1
+0x831B   NextWindowTetro
+0x869D   TB0
+0x8669   JB0
+0x8635   LB0
+0x861B   SB0
+0x8601   ZB0
+0x85EB   IB0
+0x8301   endRandom
+0x85E0   OB0
+0x82DE   is0
+0x82E3   is1
+0x82E8   is2
+0x82ED   is3
+0x82F2   is4
+0x82F7   is5
+0x82FC   is6
+0x82B8   loopRandom
+0x8289   pressloop
+0x8AD1   Endgametext
+0x8275   endgame2
+0x8278   endgame
+0x83AF   Checklines
+0x843D   DrawTetromino
+0x0003   ptrOffsetRL
+0x0005   ptrOffsetRR
+0x81C2   repS
+0x8240   endTurn
+0x8232   saveKey
+0x8415   Undu
+0x853F   hasCollision
+0x8491   DeleteTetromino
+0x8156   isSp
+0x81C7   isA
+0x8176   isD
+0x818F   isS
+0x81E0   isE
+0x8209   isQ
+0x8160   isW
+0x8522   savePos
+0x8118   endRead
+0x8117   endtec
+0x811C   iniRead
+0x80E5   endwait
+0x8BDA   pressText2
+0x8BF8   pressText3
+0x8247   firstTetro
+0x82B7   Random
+0x8348   WindowTuto
+0x85AC   lineHD
+0x809D X title
+0x8090   looptetrisblackframe
+0x85BE   line
+0x807A   looptetrisblueframe
+0x8072 X frame
+0x80E6   Readkey
+0x806F   loop
+0x80A8   main
+0x8B37   Tetristext
+0x8072   gameboard
+0x86D1   hrBKG
+0x8059   restart
+0x8B48   tutText
+0x8B3E   TutorialText
+0x802C X Tutorialtexts
+0x87A6   CLEARSCR
+0x80B1   waitKey
+0x8722   PRINTAT
+0x8BBC   pressText
+0x8702   printtext
+0x8AF2   Welcometext
+0x8010 X start
+0x800E   NewTetroPtr
+0x800D X UndoKey
+0x800B X DownCounter
+0x8009   TetroPtr
+0x8008   GameY
+0x8007   GameX
+0x8007 X GameStatusStruct
+0x0007 X keySp
+0x0006   keyQ
+0x0005   keyE
+0x0004   keyA
+0x0003   keyD
+0x0002   keyS
+0x0001   keyW
+0x8006   aux
+0x8005   Key
+0x8004   Acceptkey
+0x8000 X begin
